@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Nav = styled.nav`
-  background: #000;
+  background: white;
   height: 80px;
   /* margin-top: -80px; */
   display: flex;
@@ -13,6 +13,9 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
 
   @media screen and (max-width: 960px) {
     transition: 0.8 all ease;
@@ -30,7 +33,7 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(Link)`
-  color: white;
+  color: black;
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
@@ -72,7 +75,7 @@ export const NavItem = styled.li`
 `;
 
 export const NavLinks = styled(Link)`
-  color: #fff;
+  color: black;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -86,6 +89,7 @@ export const NavLinks = styled(Link)`
 `;
 
 export const NavBtn = styled.nav`
+  padding-left: 20px;
   display: flex;
   align-items: center;
 
@@ -109,7 +113,7 @@ export const NavBtnLink = styled(Link)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+    background: black;
+    color: white;
   }
 `;

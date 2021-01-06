@@ -3,9 +3,6 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import SLUGS from "../resources/slugs";
 import LoadingComponent from "../components/loading";
 
-import Navbar from "../components/public/Navbar";
-import Sidebar from "../components/public/Sidebar";
-
 const Signup = lazy(() => import("./public/auth/employee/signup"));
 const Signin = lazy(() => import("./public/auth/employee/login"));
 const Landing = lazy(() => import("./public/landing/employee"));
@@ -25,8 +22,6 @@ function PublicRoutes() {
   };
   return (
     <Suspense fallback={<LoadingComponent loading />}>
-      <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Navbar setIsOpen={setIsOpen} toggle={toggle} />
       <Switch>
         {/* employee routes */}
         <Route exact path={SLUGS.landing} component={Landing} />
