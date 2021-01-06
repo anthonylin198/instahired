@@ -2,82 +2,70 @@ import axios from "axios";
 import React, { useState } from "react";
 import styled from "styled-components";
 // import logo from "../assets/logo.svg";
-import setAuthToken from "../../../../utils/setAuthToken";
+import setAuthToken from "../../../../../utils/setAuthToken";
 
-// React router
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-// Redux imports
+import { SpinLoader } from "../../../../../components/loaders";
+
+// redux
 import { useDispatch } from "react-redux";
-import { loadUserAction } from "../../../../redux/actions/user";
+import { loadUserAction } from "../../../../../redux/actions/user";
 
-const Sidebar = () => {
-  const dispatch = useDispatch();
-
+const Sidebar = ({ signingIn, setSigningIn }) => {
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
+
   let history = useHistory();
+  const dispatch = useDispatch();
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // submit the form
+  // submit the form -> use login
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      console.log("Passwords do not match");
-    } else {
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-      const body = JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-      });
-      try {
-        const res = await axios.post("/api/auth", body, config);
-        // todo: localstorage set the json token
-        localStorage.setItem("token", res.data.token);
-        if (localStorage.token) {
-          setAuthToken(localStorage.token);
-        }
-        // todo: dispatch action and load to redux
-        dispatch(loadUserAction(body));
-        //todo: Go to the home dashboard
-        history.push("/dashboard");
-      } catch (err) {
-        console.log("this is an error", err);
+    setSigningIn(true);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const body = JSON.stringify({
+      email: formData.email,
+      password: formData.password,
+    });
+    try {
+      const res = await axios.post("/api/auth/signin", body, config);
+      localStorage.setItem("token", res.data.token);
+      if (localStorage.token) {
+        setAuthToken(localStorage.token);
       }
+      dispatch(loadUserAction());
+      history.push("/dashboard");
+      setSigningIn(false);
+    } catch (err) {
+      setSigningIn(false);
+      console.log("this is an error", err);
     }
   };
+
+  let loading;
+  if (signingIn) {
+    loading = <SpinLoader />;
+  }
   return (
     <Container>
       <LogoWrapper>
         {/* <img src={logo} alt="" /> */}
-        <h3>CodeIgnite</h3>
+        <h3>Instahired</h3>
       </LogoWrapper>
       <Form>
-        <h3>Sign Up</h3>
-        <InputContainer>
-          <StyledInput
-            placeholder="Full Name"
-            name="name"
-            type="text"
-            onChange={(e) => {
-              onChange(e);
-            }}
-          />
-          <Status />
-        </InputContainer>
+        <h3>Sign In</h3>
         <InputContainer>
           <StyledInput
             placeholder="Email"
@@ -100,19 +88,8 @@ const Sidebar = () => {
           />
           <Status />
         </InputContainer>
-
-        <InputContainer>
-          <StyledInput
-            placeholder="Confirm Password"
-            name="confirmPassword"
-            type="password"
-            onChange={(e) => {
-              onChange(e);
-            }}
-          />
-          <Status />
-        </InputContainer>
-        <button onClick={(e) => onSubmit(e)}>Sign Up</button>
+        <button onClick={(e) => onSubmit(e)}>Sign In</button>
+        {loading}
       </Form>
       <div>
         <Terms>
@@ -120,7 +97,7 @@ const Sidebar = () => {
           Service
         </Terms>
         <h4>
-          Already have an account? <Link to="signin">Sign In</Link>
+          Already have an account? <Link to="signup">Sign Up</Link>
         </h4>
       </div>
     </Container>

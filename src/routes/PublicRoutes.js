@@ -3,8 +3,8 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import SLUGS from "../resources/slugs";
 import LoadingComponent from "../components/loading";
 
-const Signup = lazy(() => import("./auth/signup"));
-const Signin = lazy(() => import("./auth/login"));
+const Signup = lazy(() => import("./auth/employee/signup"));
+const Signin = lazy(() => import("./auth/employee/login"));
 const Landing = lazy(() => import("./landing/employee"));
 const EmployerLanding = lazy(() => import("./landing/recruit"));
 const EmployerSignup = lazy(() => import("./auth/employer/EmployerSignup"));
