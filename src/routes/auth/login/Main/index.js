@@ -5,7 +5,7 @@ const Main = () => {
   return (
     <>
       <Container>
-        <h1>Join an Early-Stage Startup</h1>
+        <h1>Skip to the Final Round</h1>
         {/* <p>Anonymous Hiring: Showcase your skills</p>
         <p>
           Skip to the Final Round Interview: Companies create customized
