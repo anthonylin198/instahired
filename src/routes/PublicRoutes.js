@@ -1,18 +1,33 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import SLUGS from "../resources/slugs";
 import LoadingComponent from "../components/loading";
 
-const Signup = lazy(() => import("./auth/employee/signup"));
-const Signin = lazy(() => import("./auth/employee/login"));
-const Landing = lazy(() => import("./landing/employee"));
-const EmployerLanding = lazy(() => import("./landing/recruit"));
-const EmployerSignup = lazy(() => import("./auth/employer/EmployerSignup"));
-const EmployerLogin = lazy(() => import("./auth/employer/EmployerLogin"));
+import Navbar from "../components/public/Navbar";
+import Sidebar from "../components/public/Sidebar";
+
+const Signup = lazy(() => import("./public/auth/employee/signup"));
+const Signin = lazy(() => import("./public/auth/employee/login"));
+const Landing = lazy(() => import("./public/landing/employee"));
+const EmployerLanding = lazy(() => import("./public/landing/recruit"));
+const EmployerSignup = lazy(() =>
+  import("./public/auth/employer/EmployerSignup")
+);
+const EmployerLogin = lazy(() =>
+  import("./public/auth/employer/EmployerLogin")
+);
 // const DashboardComponent = lazy(() => import("./dashboard"));
+
 function PublicRoutes() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <Suspense fallback={<LoadingComponent loading />}>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar setIsOpen={setIsOpen} toggle={toggle} />
       <Switch>
         {/* employee routes */}
         <Route exact path={SLUGS.landing} component={Landing} />

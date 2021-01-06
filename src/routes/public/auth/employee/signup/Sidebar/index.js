@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import styled from "styled-components";
 // import logo from "../assets/logo.svg";
-import setAuthToken from "../../../../../utils/setAuthToken";
+import setAuthToken from "../../../../../../utils/setAuthToken";
 
 // React router
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ import { useHistory } from "react-router-dom";
 
 // Redux imports
 import { useDispatch } from "react-redux";
-import { loadUserAction } from "../../../../../redux/actions/user";
+import { loadUserAction } from "../../../../../../redux/actions/user";
 
 const Sidebar = () => {
   const dispatch = useDispatch();

@@ -3,11 +3,11 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import SLUGS from "../resources/slugs";
 import LoadingComponent from "../components/loading";
 
-const DashboardComponent = lazy(() => import("./dashboard"));
-const ProfileComponent = lazy(() => import("./profile"));
-const CurriculumComponent = lazy(() => import("./curriculum"));
-const ExploreComponent = lazy(() => import("./explore"));
-const MessagesComponent = lazy(() => import("./messages"));
+const DashboardComponent = lazy(() => import("./private/dashboard"));
+const ProfileComponent = lazy(() => import("./private/profile"));
+const CurriculumComponent = lazy(() => import("./private/curriculum"));
+const ExploreComponent = lazy(() => import("./private/explore"));
+const MessagesComponent = lazy(() => import("./private/messages"));
 
 function PrivateRoutes() {
   return (

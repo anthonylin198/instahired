@@ -2,16 +2,16 @@ import axios from "axios";
 import React, { useState } from "react";
 import styled from "styled-components";
 // import logo from "../assets/logo.svg";
-import setAuthToken from "../../../../../utils/setAuthToken";
+import setAuthToken from "../../../../../../utils/setAuthToken";
 
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-import { SpinLoader } from "../../../../../components/loaders";
+import { SpinLoader } from "../../../../../../components/loaders";
 
 // redux
 import { useDispatch } from "react-redux";
-import { loadUserAction } from "../../../../../redux/actions/user";
+import { loadUserAction } from "../../../../../../redux/actions/user";
 
 const Sidebar = ({ signingIn, setSigningIn }) => {
   const [formData, setFormData] = useState({
