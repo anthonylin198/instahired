@@ -23,6 +23,7 @@ function Routes() {
   const dispatch = useDispatch();
 
   // hook changes based off user.isAuthenicated
+  // todo: Need to separate employer login and user login
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // loads the user data on page refresh

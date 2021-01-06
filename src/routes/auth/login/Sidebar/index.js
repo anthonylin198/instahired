@@ -62,7 +62,7 @@ const Sidebar = ({ signingIn, setSigningIn }) => {
     <Container>
       <LogoWrapper>
         {/* <img src={logo} alt="" /> */}
-        <h3>CodeIgnite</h3>
+        <h3>Instahired</h3>
       </LogoWrapper>
       <Form>
         <h3>Sign In</h3>

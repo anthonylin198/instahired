@@ -3,9 +3,21 @@ import styled from "styled-components";
 
 const Main = () => {
   return (
-    <Container>
-      <h1>Login Now!</h1>
-    </Container>
+    <>
+      <Container>
+        <h1>Join an Early-Stage Startup</h1>
+        {/* <p>Anonymous Hiring: Showcase your skills</p>
+        <p>
+          Skip to the Final Round Interview: Companies create customized
+          assessments to ensure culture fit and skills
+        </p>
+        <p>
+          Valuable Time Spent: Companies are limited to have x number of open
+          applications. No longer worry about 500 applications and automated
+          rejections and
+        </p> */}
+      </Container>
+    </>
   );
 };
 
@@ -13,6 +25,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   h1 {

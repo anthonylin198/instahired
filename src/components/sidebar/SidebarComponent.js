@@ -63,12 +63,6 @@ function SidebarComponent() {
         onClick={() => onClick(SLUGS.dashboard)}
       />
       <MenuItem
-        id={SLUGS.curriculum}
-        title="Curriculum"
-        icon={IconSubscription}
-        onClick={() => onClick(SLUGS.curriculum)}
-      />
-      <MenuItem
         id={SLUGS.explore}
         title="Explore"
         icon={IconContacts}

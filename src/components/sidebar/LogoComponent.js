@@ -27,9 +27,9 @@ const LogoImg = styled.img`
 function LogoComponent() {
   return (
     <LogoContainer horizontal="center" vertical="center">
-      <LogoImg src={Logo} alt="logo" />
+      {/* <LogoImg src={Logo} alt="logo" /> */}
       {/* <IconLogo /> */}
-      <LogoTitle>CodeIgnite</LogoTitle>
+      <LogoTitle>Instahired</LogoTitle>
     </LogoContainer>
   );
 }
