@@ -1,5 +1,5 @@
 import React from "react";
-import { CardContainerFlex } from "../../../components/layout";
+import { CardContainerFlex } from "../../../../components/layout";
 
 const SummaryComponent = () => {
   return (
