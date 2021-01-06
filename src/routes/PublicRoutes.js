@@ -16,7 +16,6 @@ const EmployerSignup = lazy(() =>
 const EmployerLogin = lazy(() =>
   import("./public/auth/employer/EmployerLogin")
 );
-// const DashboardComponent = lazy(() => import("./dashboard"));
 
 function PublicRoutes() {
   const [isOpen, setIsOpen] = useState(false);
