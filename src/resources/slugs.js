@@ -25,7 +25,8 @@ const slugs = {
   recruit: "/recruit",
   signin: "/signin",
   signup: "/signup",
-
+  recruitsignin: "/recruit/signin",
+  recruitsignup: "/recruit/signup",
   forgotPassword: "/forgot_password",
 };
 
