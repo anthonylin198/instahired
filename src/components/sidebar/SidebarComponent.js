@@ -4,7 +4,6 @@ import SLUGS from "../../resources/slugs";
 import {
   IconLogout,
   IconSettings,
-  IconSubscription,
   IconAgents,
   IconOverview,
   IconContacts,
