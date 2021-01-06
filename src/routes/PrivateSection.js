@@ -32,6 +32,7 @@ const StyledBlock = styled.div`
 function PrivateSection() {
   // conditional rendering based on react router
   let location = useLocation();
+  // todo: check state of login, would go to employer dashboard
   if (location.pathname.includes("/curriculum/")) {
     return (
       <div>
