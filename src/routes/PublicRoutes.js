@@ -5,19 +5,22 @@ import LoadingComponent from "../components/loading";
 
 const Signup = lazy(() => import("./auth/signup"));
 const Signin = lazy(() => import("./auth/login"));
+const Landing = lazy(() => import("./landing/employee"));
+const EmployerLanding = lazy(() => import("./landing/recruit"));
 // const DashboardComponent = lazy(() => import("./dashboard"));
 function PublicRoutes() {
   return (
     <Suspense fallback={<LoadingComponent loading />}>
       <Switch>
-        <Route path={SLUGS.signup} component={Signup} />
-        <Route path={SLUGS.login} component={Signin} />
-
-        <Route
-          path={SLUGS.forgotPassword}
-          render={() => <div>forgotPassword</div>}
-        />
-        <Redirect to={SLUGS.signup} />
+        <Route exact path={SLUGS.landing} component={Landing} />
+        {/* employee signup */}
+        {/* employee signin */}
+        <Route exact path={SLUGS.recruit} component={EmployerLanding} />
+        {/* employer signup */}
+        {/* employer signin */}
+        <Route exact path={SLUGS.signup} component={Signup} />
+        <Route exact path={SLUGS.signin} component={Signin} />
+        <Redirect to={SLUGS.landing} />
       </Switch>
     </Suspense>
   );
