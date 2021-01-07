@@ -26,9 +26,13 @@ const Employee = () => {
           {/* Content Container */}
           <ContentContainer>
             <h1>Instahired</h1>
-            <h2>Connecting Students to Startups</h2>
+            <h2>Find your dream startup</h2>
+            <h2>
+              Skip the phone screen and find your fit my demonstrating technical
+              ability
+            </h2>
             <Link to="/recruit">Recruit</Link>
-            <Link to="signup">Join Now</Link>
+            <Link to="signup">Find Your Job</Link>
           </ContentContainer>
         </LeftGrid>
         <RightGrid item md={6}>
@@ -55,6 +59,7 @@ const ContentContainer = styled.div`
   justify-content: center;
   /* align-items: center; */
   flex-direction: column;
+  width: 600px;
 `;
 
 const LeftGrid = styled(Grid)`
