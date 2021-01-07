@@ -31,7 +31,7 @@ const Employee = () => {
             <Title>Instahired</Title>
             <SubTitle>Find your dream startup</SubTitle>
             <Description>
-              Skip the phone screen and find your fit my demonstrating technical
+              Skip the phone screen and find your fit by demonstrating technical
               ability
             </Description>
             <ButtonLink to="signup">Join Now</ButtonLink>
@@ -39,7 +39,7 @@ const Employee = () => {
         </LeftGrid>
         <RightGrid item md={6}>
           <RightContentContainer>
-            <h1>here</h1>
+            <Typewriter>No Phone Screenings</Typewriter>
           </RightContentContainer>
         </RightGrid>
       </HeroContainer>
@@ -113,10 +113,10 @@ const LeftContentContainer = styled.div`
 const RightContentContainer = styled.div`
   color: white;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   /* align-items: center; */
-  flex-direction: column;
-  width: 600px;
+  /* flex-direction: column; */
+  /* width: 600px; */
 `;
 
 const LeftGrid = styled(Grid)`
@@ -137,9 +137,43 @@ const RightGrid = styled(Grid)`
   background-position: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: left;
   @media screen and (max-width: 768px) {
     display: none;
+  }
+`;
+
+// https://www.youtube.com/watch?v=PuOGBacTYAY
+const Typewriter = styled.h1`
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  /* margin: 0 auto; Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 1.75s steps(40, end), blink-caret 0.75s step-end infinite;
+  padding-left: 30px;
+  font-size: 2rem;
+
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
   }
 `;
 
