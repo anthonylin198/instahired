@@ -23,7 +23,8 @@ const Employee = () => {
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar setIsOpen={setIsOpen} toggle={toggle} />
-      <Container>
+      {/* hero section */}
+      <HeroContainer>
         <LeftGrid item xs={12} md={6}>
           {/* Content Container */}
           <LeftContentContainer>
@@ -41,7 +42,7 @@ const Employee = () => {
             <h1>here</h1>
           </RightContentContainer>
         </RightGrid>
-      </Container>
+      </HeroContainer>
     </>
   );
 };
@@ -62,7 +63,7 @@ const ButtonLink = styled(Link)`
   }
 `;
 
-const Container = styled.div`
+const HeroContainer = styled.div`
   display: flex;
   height: 94vh;
   background: #f9f9f9;
