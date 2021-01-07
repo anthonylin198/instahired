@@ -30,6 +30,8 @@ const Employee = () => {
 
 const Container = styled.div`
   display: flex;
+  height: 94vh;
+  background: #f9f9f9;
   flex-direction: column;
   align-items: center;
   justify-content: center;
