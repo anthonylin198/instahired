@@ -23,21 +23,21 @@ const Navbar = ({ toggle }) => {
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
+          <NavMenu>
+            <NavItem>
+              <NavLinks to="/">Find Candidates</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="quiz">Find a Job</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="/signin">Login</NavLinks>
+            </NavItem>
+            <NavBtn>
+              <NavBtnLink to="components">Create an Account</NavBtnLink>
+            </NavBtn>
+          </NavMenu>
         </NavbarContainer>
-        <NavMenu>
-          <NavItem>
-            <NavLinks to="/">Find Candidates</NavLinks>
-          </NavItem>
-          <NavItem>
-            <NavLinks to="quiz">Find a Job</NavLinks>
-          </NavItem>
-          <NavItem>
-            <NavLinks to="/signin">Login</NavLinks>
-          </NavItem>
-        </NavMenu>
-        <NavBtn>
-          <NavBtnLink to="components">Create an Account</NavBtnLink>
-        </NavBtn>
       </Nav>
     </>
   );
