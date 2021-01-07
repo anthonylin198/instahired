@@ -31,7 +31,7 @@ const Employee = () => {
             <Link to="signup">Join Now</Link>
           </ContentContainer>
         </LeftGrid>
-        <RightGrid item xs={false} md={6}>
+        <RightGrid item md={6}>
           <ContentContainer>
             <h1>here</h1>
           </ContentContainer>
@@ -76,5 +76,8 @@ const RightGrid = styled(Grid)`
   display: flex;
   justify-content: center;
   text-align: left;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 export default Employee;
