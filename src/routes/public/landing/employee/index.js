@@ -67,7 +67,10 @@ const Container = styled.div`
   height: 94vh;
   background: #f9f9f9;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  @media screen and (max-width: 960px) {
+    height: 90vh;
+  }
 `;
 
 const Title = styled.h1`
@@ -102,6 +105,10 @@ const LeftContentContainer = styled.div`
     100% {
       transform: translateX(0);
     }
+  }
+
+  @media screen and (max-width: 960px) {
+    justify-content: start;
   }
 `;
 
