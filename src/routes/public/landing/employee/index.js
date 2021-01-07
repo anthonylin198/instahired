@@ -67,8 +67,6 @@ const HeroContainer = styled.div`
   display: flex;
   height: 94vh;
   background: #f9f9f9;
-  align-items: center;
-  /* justify-content: center; */
   @media screen and (max-width: 960px) {
     height: 90vh;
   }
@@ -93,7 +91,6 @@ const LeftContentContainer = styled.div`
   color: white;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
   width: 600px;
   animation: 1s ease-out 0s 1 slideInFromLeft;
