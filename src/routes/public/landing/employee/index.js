@@ -24,7 +24,7 @@ const Employee = () => {
       <Container>
         <LeftGrid item xs={12} md={6}>
           {/* Content Container */}
-          <ContentContainer>
+          <LeftContentContainer>
             <h1>Instahired</h1>
             <h2>Find your dream startup</h2>
             <h2>
@@ -33,12 +33,12 @@ const Employee = () => {
             </h2>
             <Link to="/recruit">Recruit</Link>
             <Link to="signup">Find Your Job</Link>
-          </ContentContainer>
+          </LeftContentContainer>
         </LeftGrid>
         <RightGrid item md={6}>
-          <ContentContainer>
+          <RightContentContainer>
             <h1>here</h1>
-          </ContentContainer>
+          </RightContentContainer>
         </RightGrid>
       </Container>
     </>
@@ -53,7 +53,26 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const ContentContainer = styled.div`
+const LeftContentContainer = styled.div`
+  color: white;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  width: 600px;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+`;
+
+const RightContentContainer = styled.div`
   color: white;
   display: flex;
   justify-content: center;
