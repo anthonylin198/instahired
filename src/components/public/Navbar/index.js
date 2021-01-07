@@ -24,7 +24,6 @@ const Navbar = ({ toggle }) => {
             <FaBars />
           </MobileIcon>
         </NavbarContainer>
-
         <NavMenu>
           <NavItem>
             <NavLinks to="/">Find Candidates</NavLinks>
