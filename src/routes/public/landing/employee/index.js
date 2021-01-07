@@ -31,8 +31,7 @@ const Employee = () => {
               Skip the phone screen and find your fit my demonstrating technical
               ability
             </h2>
-            <Link to="/recruit">Recruit</Link>
-            <Link to="signup">Find Your Job</Link>
+            <Link to="signup">Join Now</Link>
           </LeftContentContainer>
         </LeftGrid>
         <RightGrid item md={6}>
