@@ -17,10 +17,11 @@ const Employee = () => {
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar setIsOpen={setIsOpen} toggle={toggle} />
-
       <Container>
-        <h1>Employee landing</h1>
+        <h1>Skip to the Final Round Interview At Your Dream Startup</h1>
+        <h2>asdasdasdvfddsf</h2>
         <Link to="/recruit">Recruit</Link>
+
         <Link to="signup">Join Now</Link>
       </Container>
     </>
@@ -32,6 +33,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 `;
 
 export default Employee;
