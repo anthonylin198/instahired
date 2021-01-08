@@ -28,7 +28,7 @@ const Navbar = ({ toggle }) => {
               <NavLinks to="quiz">Find a Job</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/">Recruit</NavLinks>
+              <NavLinks to="/recruit">Recruit</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="/signin">Login</NavLinks>
