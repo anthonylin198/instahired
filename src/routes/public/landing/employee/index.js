@@ -29,10 +29,10 @@ const Employee = () => {
           {/* Content Container */}
           <LeftContentContainer>
             <Title>Instahired</Title>
-            <SubTitle>Find your dream startup</SubTitle>
+            <SubTitle>Skip the Phone Screen</SubTitle>
             <Description>
-              Skip the phone screen and find your fit by demonstrating technical
-              ability
+              Find your dream job with customized assessments to analyze your
+              culture fit and skillset
             </Description>
             <ButtonLink to="signup">Join Now</ButtonLink>
           </LeftContentContainer>
