@@ -33,7 +33,7 @@ const Employee = () => {
             <Description>
               Create customized assessments to find a fit
             </Description>
-            <ButtonLink to="signup">Start Hiring Today</ButtonLink>
+            <ButtonLink to="/recruit/signup">Start Hiring Today</ButtonLink>
           </LeftContentContainer>
         </LeftGrid>
         <RightGrid item md={6}>
