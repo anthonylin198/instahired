@@ -33,7 +33,7 @@ const Employee = () => {
             <Description>
               Create customized assessments to find a fit
             </Description>
-            <ButtonLink to="signup">Join Now</ButtonLink>
+            <ButtonLink to="signup">Start Hiring Today</ButtonLink>
           </LeftContentContainer>
         </LeftGrid>
         <RightGrid item md={6}>
@@ -48,8 +48,8 @@ const Employee = () => {
 
 const ButtonLink = styled(Link)`
   /* width: 100px; */
-  height: 50px;
-  width: 150px;
+  height: 60px;
+  width: 275px;
   display: flex;
   justify-content: center;
   align-items: center;
