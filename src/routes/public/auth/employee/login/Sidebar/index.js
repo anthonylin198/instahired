@@ -118,7 +118,7 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
   h3 {
-    color: #666666;
+    color: black;
     margin-bottom: 2rem;
   }
   button {
@@ -130,7 +130,7 @@ const Form = styled.form`
     margin: 1rem 0;
     box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    background-color: #70edb9;
+    background-color: #3179ff;
     color: #fff;
     font-weight: 600;
     cursor: pointer;
@@ -146,9 +146,9 @@ const LogoWrapper = styled.div`
     height: 6rem;
   }
   h3 {
-    color: #ff8d8d;
+    color: black;
     text-align: center;
-    font-size: 22px;
+    font-size: 36px;
   }
   span {
     color: #5dc399;

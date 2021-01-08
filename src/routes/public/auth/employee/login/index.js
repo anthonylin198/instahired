@@ -28,8 +28,8 @@ const Signup = () => {
   return (
     <Container>
       <Wrapper>
-        <Main />
         <Sidebar signingIn={signingIn} setSigningIn={setSigningIn} />
+        <Main />
       </Wrapper>
     </Container>
   );
