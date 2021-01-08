@@ -138,6 +138,9 @@ const Form = styled.form`
     &:hover {
       transform: translateY(-3px);
     }
+    @media (max-width: 900px) {
+      min-width: 0px;
+    }
   }
 `;
 
@@ -169,6 +172,7 @@ const Container = styled.div`
   align-items: center;
   padding: 0 2rem;
   @media (max-width: 900px) {
+    min-width: 0px;
     width: 100vw;
     position: absolute;
     padding: 0;
@@ -199,6 +203,9 @@ const StyledInput = styled.input`
   transition: all 0.2s ease-in;
   &:hover {
     transform: translateY(-3px);
+  }
+  @media (max-width: 900px) {
+    min-width: 0px;
   }
 `;
 
