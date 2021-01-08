@@ -31,12 +31,12 @@ const Container = styled.div`
     font-weight: 900;
     color: #343434;
     padding-bottom: 50px;
-    @media (max-width: 900px) {
-      display: none;
-    }
   }
   p {
     padding-bottom: 75px;
+  }
+  @media (max-width: 900px) {
+    display: none;
   }
 `;
 

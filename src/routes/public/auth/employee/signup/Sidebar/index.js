@@ -176,9 +176,11 @@ const Container = styled.div`
   align-items: center;
   padding: 0 2rem;
   @media (max-width: 900px) {
+    min-width: 0px;
     width: 100vw;
     position: absolute;
     padding: 0;
+    /* display: none; */
   }
   h4 {
     color: #808080;
@@ -206,6 +208,9 @@ const StyledInput = styled.input`
   transition: all 0.2s ease-in;
   &:hover {
     transform: translateY(-3px);
+  }
+  @media (max-width: 900px) {
+    min-width: 0px;
   }
 `;
 
