@@ -14,7 +14,7 @@ const Main = () => {
           your skills through customized technical assessments created by the
           company, and skip to the final round.
         </p>
-        <ButtonLink to="/">Learn More</ButtonLink>
+        <ButtonLink to="/recruit">Learn More</ButtonLink>
       </ContentContainer>
     </Container>
   );
