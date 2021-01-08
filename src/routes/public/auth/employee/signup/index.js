@@ -25,8 +25,8 @@ const Signup = () => {
   return (
     <Container>
       <Wrapper>
-        <Main />
         <Sidebar />
+        <Main />
       </Wrapper>
     </Container>
   );

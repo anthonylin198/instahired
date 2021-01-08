@@ -63,7 +63,7 @@ const Sidebar = () => {
     <Container>
       <LogoWrapper>
         {/* <img src={logo} alt="" /> */}
-        <h3>CodeIgnite</h3>
+        <h3>Instahired</h3>
       </LogoWrapper>
       <Form>
         <h3>Sign Up</h3>
@@ -141,7 +141,7 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
   h3 {
-    color: #666666;
+    color: black;
     margin-bottom: 2rem;
   }
   button {
@@ -153,7 +153,7 @@ const Form = styled.form`
     margin: 1rem 0;
     box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    background-color: #70edb9;
+    background-color: #3179ff;
     color: #fff;
     font-weight: 600;
     cursor: pointer;
@@ -161,22 +161,6 @@ const Form = styled.form`
     &:hover {
       transform: translateY(-3px);
     }
-  }
-`;
-
-const LogoWrapper = styled.div`
-  img {
-    height: 6rem;
-  }
-  h3 {
-    color: #ff8d8d;
-    text-align: center;
-    font-size: 22px;
-  }
-  span {
-    color: #5dc399;
-    font-weight: 300;
-    font-size: 18px;
   }
 `;
 
@@ -245,6 +229,22 @@ const Status = styled.div`
   }
   ${StyledInput}:valid + & {
     background: #70edb9;
+  }
+`;
+
+const LogoWrapper = styled.div`
+  img {
+    height: 6rem;
+  }
+  h3 {
+    color: black;
+    text-align: center;
+    font-size: 36px;
+  }
+  span {
+    color: #5dc399;
+    font-weight: 300;
+    font-size: 18px;
   }
 `;
 
