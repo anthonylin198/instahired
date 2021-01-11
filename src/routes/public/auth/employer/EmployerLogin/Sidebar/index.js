@@ -65,7 +65,7 @@ const Sidebar = ({ signingIn, setSigningIn }) => {
         <h3>Instahired</h3>
       </LogoWrapper>
       <Form>
-        <h3>Sign In</h3>
+        <h3>Employer Sign In</h3>
         <InputContainer>
           <StyledInput
             placeholder="Email"
