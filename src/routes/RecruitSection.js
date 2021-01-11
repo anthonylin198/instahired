@@ -1,7 +1,11 @@
 import React from "react";
 import { Column, Row } from "simple-flexbox";
-import { SidebarComponent, SidebarContext } from "../components/sidebar";
-import HeaderComponent from "../components/header/HeaderComponent";
+// todo: Have new sidebar component
+import {
+  SidebarComponent,
+  SidebarContext,
+} from "../components/private/recruit/sidebar";
+import HeaderComponent from "../components/private/recruit/header/HeaderComponent";
 // import PrivateRoutes from "./PrivateRoutes";
 
 import styled from "styled-components";

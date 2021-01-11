@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import SLUGS from "../../resources/slugs";
+import SLUGS from "../../../../resources/slugs";
 import {
   IconLogout,
   IconSettings,
@@ -8,15 +8,15 @@ import {
   IconOverview,
   IconContacts,
   IconTickets,
-} from "../../assets/icons";
-import { convertSlugToUrl } from "../../resources/utilities";
+} from "../../../../assets/icons";
+import { convertSlugToUrl } from "../../../../resources/utilities";
 import LogoComponent from "./LogoComponent";
 import Menu from "./MenuComponent";
 import MenuItem from "./MenuItemComponent";
 
 // redux
 import { useDispatch } from "react-redux";
-import { logout } from "../../redux/reducers/user";
+import { logout } from "../../../../redux/reducers/user";
 
 // styled components
 import styled from "styled-components";
@@ -51,7 +51,7 @@ function SidebarComponent() {
       </div>
       <MenuItem
         id={SLUGS.profile}
-        title="Profile"
+        title="Company Profile"
         icon={IconAgents}
         onClick={() => onClick(SLUGS.profile)}
       />
