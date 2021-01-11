@@ -24,7 +24,6 @@ module.exports = async (req, res) => {
           password,
           isAuthenticated: true,
         });
-        console.log("here", user);
         // Encrypt password with Bcrypt and save to database
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(password, salt);
