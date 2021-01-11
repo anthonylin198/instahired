@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 
-import Navbar from "../../../../components/public/Navbar";
+import Navbar from "../../../../components/public/Navbar_Employer";
 import Sidebar from "../../../../components/public/Sidebar";
 
 // img
