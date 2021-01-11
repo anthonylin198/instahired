@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import useWindowSize from "../hooks/useWindowSize";
 import PrivateSection from "./PrivateSection";
 import PublicRoutes from "./PublicRoutes";
+import RecruitSection from "./RecruitSection";
 
 // redux and axios
 import setAuthToken from "../utils/setAuthToken";
@@ -68,7 +69,7 @@ function Routes() {
   if (isAuthenticated === "user") {
     return <PrivateSection />;
   } else if (isAuthenticated === "company") {
-    return <h1>Here in company</h1>;
+    return <RecruitSection />;
   } else {
     return <PublicRoutes />;
   }
