@@ -8,6 +8,7 @@ import PublicRoutes from "./PublicRoutes";
 import setAuthToken from "../utils/setAuthToken";
 import { useDispatch, useSelector } from "react-redux";
 import { loadUserAction } from "../redux/actions/user";
+import { loadCompanyAction } from "../redux/actions/company";
 
 function Routes() {
   const { pathname } = useLocation();
@@ -19,20 +20,31 @@ function Routes() {
 
   // useselector
   const authenticated = useSelector((state) => state.user.isAuthenticated);
+  const companyAuth = useSelector((state) => state.company.isAuthenticated);
 
   const dispatch = useDispatch();
 
   // hook changes based off user.isAuthenicated
   // todo: Need to separate employer login and user login
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState("");
 
   // loads the user data on page refresh
   useEffect(() => {
+    //  todo: include logic for different outcomes
+
     const loadUserData = async () => {
-      try {
-        dispatch(loadUserAction());
-      } catch (err) {
-        console.log("error");
+      if (localStorage.token) {
+        try {
+          dispatch(loadUserAction());
+        } catch (err) {
+          console.log("error");
+        }
+      } else if (localStorage.company_token) {
+        try {
+          dispatch(loadCompanyAction());
+        } catch (err) {
+          console.log("error");
+        }
       }
     };
     loadUserData();
@@ -42,14 +54,25 @@ function Routes() {
   // force rerender whe authenticated changes
   useEffect(() => {
     if (localStorage.token) {
-      setIsAuthenticated(true);
+      setIsAuthenticated("user");
       setAuthToken(localStorage.token);
+    } else if (localStorage.company_token) {
+      setIsAuthenticated("company");
+      setAuthToken(localStorage.company_token);
     } else {
       setIsAuthenticated(false);
     }
-  }, [authenticated]);
+  }, [authenticated, companyAuth]);
 
-  return isAuthenticated ? <PrivateSection /> : <PublicRoutes />;
+  // todo: we have 3 different outcomes. if localstorage.token, go to user dash. if localstorage.companytoken, got to company dash. else public route
+  if (isAuthenticated === "user") {
+    return <PrivateSection />;
+  } else if (isAuthenticated === "company") {
+    return <h1>Here in company</h1>;
+  } else {
+    return <PublicRoutes />;
+  }
+  // return isAuthenticated ? <PrivateSection /> : <PublicRoutes />;
 }
 
 export default Routes;

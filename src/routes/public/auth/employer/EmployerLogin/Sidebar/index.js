@@ -11,7 +11,7 @@ import { SpinLoader } from "../../../../../../components/loaders";
 
 // redux
 import { useDispatch } from "react-redux";
-import { loadUserAction } from "../../../../../../redux/actions/user";
+import { loadCompanyAction } from "../../../../../../redux/actions/company";
 
 const Sidebar = ({ signingIn, setSigningIn }) => {
   const [formData, setFormData] = useState({
@@ -40,12 +40,12 @@ const Sidebar = ({ signingIn, setSigningIn }) => {
       password: formData.password,
     });
     try {
-      const res = await axios.post("/api/auth/signin", body, config);
-      localStorage.setItem("token", res.data.token);
+      const res = await axios.post("/api/company_auth/signin", body, config);
+      localStorage.setItem("company_token", res.data.token);
       if (localStorage.token) {
         setAuthToken(localStorage.token);
       }
-      dispatch(loadUserAction());
+      dispatch(loadCompanyAction());
       history.push("/dashboard");
       setSigningIn(false);
     } catch (err) {
