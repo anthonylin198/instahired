@@ -93,7 +93,7 @@ function HeaderComponent() {
 
   let title;
 
-  const user = useSelector((state) => state.user);
+  const company = useSelector((state) => state.company);
 
   switch (true) {
     case currentItem === SLUGS.dashboard:
@@ -140,6 +140,19 @@ function HeaderComponent() {
     case currentItem === SLUGS.messages:
       title = "Messages";
       break;
+    case currentItem === SLUGS.companyProfile:
+      title = "Company Profile";
+      break;
+    case currentItem === SLUGS.companyDashboard:
+      title = "Dashboard";
+      break;
+    case currentItem === SLUGS.openPositions:
+      title = "Open Positions";
+      break;
+    case currentItem === SLUGS.assessments:
+      title = "Company Assessments";
+      break;
+
     default:
       title = "";
   }
@@ -187,7 +200,7 @@ function HeaderComponent() {
         <DropdownComponent
           label={
             <>
-              <Name>{user.name}</Name>
+              <Name>{company.name}</Name>
               {/* <Avatar
                 // Insert link to the user image
                 src="https://avatars3.githubusercontent.com/u/21162888?s=460&v=4"
