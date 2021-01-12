@@ -3,25 +3,28 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import SLUGS from "../resources/slugs";
 import LoadingComponent from "../components/loading";
 
-const DashboardComponent = lazy(() => import("./private/dashboard"));
-const ProfileComponent = lazy(() => import("./private/profile"));
-const CurriculumComponent = lazy(() => import("./private/curriculum"));
+const DashboardComponent = lazy(() => import("./private/recruit/dashboard"));
+const ProfileComponent = lazy(() => import("./private/recruit/profile"));
+const CurriculumComponent = lazy(() => import("./private/employee/curriculum"));
 const ExploreComponent = lazy(() => import("./private/employee/explore"));
-const MessagesComponent = lazy(() => import("./private/employee/messages"));
+// const MessagesComponent = lazy(() => import("./private/employee/messages"));
 
-function PrivateRoutes() {
+function RecruitRoutes() {
   return (
     <Suspense fallback={<LoadingComponent loading />}>
       <Switch>
-        <Route exact path={SLUGS.profile} component={ProfileComponent} />
-        <Route exact path={SLUGS.dashboard} component={DashboardComponent} />
-        <Route exact path={SLUGS.curriculum} component={CurriculumComponent} />
-        <Route exact path={SLUGS.explore} component={ExploreComponent} />
-        <Route exact path={SLUGS.messages} component={MessagesComponent} />
-        <Route exact path={SLUGS.settings} render={() => <div>settings</div>} />
-
-        {/* startup school, this needs to be a different section */}
-        <Route exact path={SLUGS.startupschool} component={MessagesComponent} />
+        <Route exact path={SLUGS.companyProfile} component={ProfileComponent} />
+        <Route
+          exact
+          path={SLUGS.companyDashboard}
+          component={DashboardComponent}
+        />
+        <Route
+          exact
+          path={SLUGS.openPositions}
+          component={CurriculumComponent}
+        />
+        <Route exact path={SLUGS.assessments} component={ExploreComponent} />
 
         <Redirect to={SLUGS.dashboard} />
       </Switch>
@@ -29,4 +32,4 @@ function PrivateRoutes() {
   );
 }
 
-export default PrivateRoutes;
+export default RecruitRoutes;

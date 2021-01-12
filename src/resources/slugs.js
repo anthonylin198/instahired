@@ -28,6 +28,12 @@ const slugs = {
   recruitsignin: "/recruit/signin",
   recruitsignup: "/recruit/signup",
   forgotPassword: "/forgot_password",
+
+  // recruit pages
+  companyProfile: "/recruit/profile",
+  companyDashboard: "/recruit/dashboard",
+  openPositions: "/recruit/open-positions",
+  assessments: "/recruit/assessments",
 };
 
 export default slugs;

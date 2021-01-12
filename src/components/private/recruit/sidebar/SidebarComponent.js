@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import SLUGS from "../../../../resources/slugs";
 import {
   IconLogout,
-  IconSettings,
   IconAgents,
   IconOverview,
   IconContacts,
@@ -50,38 +49,33 @@ function SidebarComponent() {
         <LogoComponent />
       </div>
       <MenuItem
-        id={SLUGS.profile}
+        id={SLUGS.companyProfile}
         title="Company Profile"
         icon={IconAgents}
-        onClick={() => onClick(SLUGS.profile)}
+        onClick={() => onClick(SLUGS.companyProfile)}
       />
       <MenuItem
-        id={SLUGS.dashboard}
+        id={SLUGS.companyDashboard}
         title="Dashboard"
         icon={IconOverview}
-        onClick={() => onClick(SLUGS.dashboard)}
+        onClick={() => onClick(SLUGS.companyDashboard)}
       />
+
       <MenuItem
-        id={SLUGS.explore}
-        title="Explore"
+        id={SLUGS.openPositions}
+        title="Open Positions"
         icon={IconContacts}
-        onClick={() => onClick(SLUGS.explore)}
+        onClick={() => onClick(SLUGS.openPositions)}
       />
-      <Seperator></Seperator>
 
       <MenuItem
-        id={SLUGS.messages}
-        title="Messages"
+        id={SLUGS.assessments}
+        title="Assessments"
         icon={IconTickets}
-        onClick={() => onClick(SLUGS.messages)}
+        onClick={() => onClick(SLUGS.assessments)}
       />
 
-      <MenuItem
-        id={SLUGS.settings}
-        title="Settings"
-        icon={IconSettings}
-        onClick={() => onClick(SLUGS.settings)}
-      />
+      <Seperator></Seperator>
 
       <MenuItem
         id="logout"

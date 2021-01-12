@@ -6,7 +6,7 @@ import {
   SidebarContext,
 } from "../components/private/recruit/sidebar";
 import HeaderComponent from "../components/private/recruit/header/HeaderComponent";
-// import PrivateRoutes from "./PrivateRoutes";
+import RecruitRoutes from "./RecruitRoutes";
 
 import styled from "styled-components";
 
@@ -52,8 +52,7 @@ function PrivateSection() {
         <StyledColumn flexGrow={1}>
           <HeaderComponent />
           <StyledBlock>
-            <h1>Recruiter</h1>
-            {/* <PrivateRoutes /> */}
+            <RecruitRoutes />
           </StyledBlock>
         </StyledColumn>
       </StyledRow>
