@@ -37,7 +37,7 @@ function SidebarComponent() {
   async function logoutUser() {
     // destroy the auth token
     dispatch(logout());
-    push(SLUGS.signin);
+    push(SLUGS.landing);
   }
 
   function onClick(slug, parameters = {}) {
