@@ -5,8 +5,12 @@ import LoadingComponent from "../components/loading";
 
 const DashboardComponent = lazy(() => import("./private/recruit/dashboard"));
 const ProfileComponent = lazy(() => import("./private/recruit/profile"));
-const CurriculumComponent = lazy(() => import("./private/employee/curriculum"));
-const ExploreComponent = lazy(() => import("./private/employee/explore"));
+const PositionsComponent = lazy(() =>
+  import("./private/recruit/openpositions")
+);
+const AssessmentsComponent = lazy(() =>
+  import("./private/recruit/assessments")
+);
 // const MessagesComponent = lazy(() => import("./private/employee/messages"));
 
 function RecruitRoutes() {
@@ -22,11 +26,15 @@ function RecruitRoutes() {
         <Route
           exact
           path={SLUGS.openPositions}
-          component={CurriculumComponent}
+          component={PositionsComponent}
         />
-        <Route exact path={SLUGS.assessments} component={ExploreComponent} />
+        <Route
+          exact
+          path={SLUGS.assessments}
+          component={AssessmentsComponent}
+        />
 
-        <Redirect to={SLUGS.dashboard} />
+        <Redirect to={SLUGS.companyDashboard} />
       </Switch>
     </Suspense>
   );
