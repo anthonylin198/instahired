@@ -11,14 +11,15 @@ const Title = styled.span`
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.2px;
-  color: ${(isActive) => (isActive ? "#DDE2FF" : "#A4A6B3")};
+  color: ${({ isactive }) => (isactive === "true" ? "#DDE2FF" : "#A4A6B3")};
   margin-left: 24px;
 `;
 
 const ClassNameColumn = styled(Column)`
   /* check if isactive */
   border-left: ${({ isactive, level }) =>
-    isactive === "true" ? (level > 1 ? "none" : "3px solid #8b8d94") : "none"};
+    isactive === "true" ? (level > 1 ? "none" : "3px solid #00d4ff") : "none"};
+  /* isactive === "true" ? (level > 1 ? "none" : "3px solid #8b8d94") : "none"}; */
 `;
 
 const ClassNameContainer = styled(Row)`
@@ -34,33 +35,6 @@ const ClassNameContainer = styled(Row)`
   background-color: ${({ isactive }) =>
     isactive === "true" ? "rgba(221, 226, 255, 0.08)" : "none"};
 `;
-
-// const useStyles = createUseStyles({
-//   activeContainer: {
-//     backgroundColor: "rgba(221, 226, 255, 0.08)",
-//   },
-//   container: {
-//     display: "flex",
-//     height: 56,
-//     cursor: "pointer",
-//     "&:hover": {
-//       backgroundColor: "rgba(221, 226, 255, 0.08)",
-//     },
-//     paddingLeft: ({ level }) => 32 * level,
-//     transition: "all 0.2s ease-in-out",
-//   },
-//   leftBar: {
-//     borderLeft: ({ theme, level }) =>
-//       level > 1 ? "none" : `3px solid "#8b8d94"`,
-//   },
-//   title: {
-//     fontSize: 16,
-//     lineHeight: "20px",
-//     letterSpacing: "0.2px",
-//     color: ({ theme, isActive }) => (isActive ? "#DDE2FF" : "#A4A6B3"),
-//     marginLeft: 24,
-//   },
-// });
 
 function MenuItemComponent({
   children,
@@ -103,7 +77,7 @@ function MenuItemComponent({
         // className={classNameContainer}
       >
         <Icon fill={iconColor} opacity={!isActive && "0.4"} />
-        <Title isActive={isActive}>{title}</Title>
+        <Title isactive={isActive.toString()}>{title}</Title>
       </ClassNameContainer>
       {isCollapsible && (
         <CollapsibleContent expanded={isExpanded}>
