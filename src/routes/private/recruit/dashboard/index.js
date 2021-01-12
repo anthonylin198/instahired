@@ -1,11 +1,62 @@
 import React from "react";
 
-const index = () => {
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+
+import SummaryCard from "./SummaryCard.js";
+import SnapshotCard from "./SnapshotCard.js";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+}));
+
+const Dashboard = () => {
+  const classes = useStyles();
   return (
-    <div>
-      <h1>Company Dashboard</h1>
+    <div className={classes.root}>
+      {/* Your Progress */}
+      <Grid container spacing={3}>
+        <Grid item md={3}>
+          <SummaryCard />
+        </Grid>
+        <Grid item md={3}>
+          <SummaryCard />
+          {/* <PhaseComponent title={"Technical Track"} /> */}
+        </Grid>
+        <Grid item md={3}>
+          <SummaryCard />
+          {/* <PhaseComponent title={"Production"} /> */}
+        </Grid>
+        <Grid item md={3}>
+          <SummaryCard />
+          {/* <PhaseComponent title={"Production"} /> */}
+        </Grid>
+      </Grid>
+      {/* Other Progress */}
+      <Grid container spacing={3}>
+        <Grid item md={8}>
+          <SnapshotCard />
+        </Grid>
+        <Grid item md={4}>
+          <SnapshotCard />
+        </Grid>
+      </Grid>
+      {/* last row */}
+      <Grid container spacing={3}>
+        <Grid item md={4}>
+          <SnapshotCard />
+        </Grid>
+        <Grid item md={4}>
+          <SnapshotCard />
+        </Grid>
+        <Grid item md={4}>
+          <SnapshotCard />
+        </Grid>
+      </Grid>
     </div>
   );
 };
 
-export default index;
+export default Dashboard;
