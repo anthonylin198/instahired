@@ -29,8 +29,12 @@ const getMenuStyles = () => ({
     width: 255,
     zIndex: 30,
   },
+  // background color
   bmMenu: {
-    background: "#373a47",
+    // background: "white",
+    // borderRight: "1px solid gray",
+    background: "black",
+    // background: "#373a47",
   },
   bmItem: {
     outline: "none",
