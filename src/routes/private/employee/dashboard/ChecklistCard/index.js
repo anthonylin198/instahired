@@ -1,5 +1,5 @@
 import React from "react";
-import { CardContainer } from "../../../../components/layout";
+import { CardContainer } from "../../../../../components/layout";
 
 const ChecklistCard = () => {
   return (

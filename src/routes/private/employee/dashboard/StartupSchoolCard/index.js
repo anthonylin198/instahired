@@ -1,12 +1,10 @@
 import React from "react";
-import { CardContainer } from "../../../../components/layout";
+import { CardContainer } from "../../../../../components/layout";
 
-const TechnicalTrackCard = ({ title }) => {
+const StartupSchoolCard = ({ title }) => {
   return (
     <CardContainer>
-      <h2>Phase 2: {title}</h2>
-      <p>Here</p>
-      <p>Here</p>
+      <h2>Phase 1: {title}</h2>
       <p>Here</p>
       <p>Here</p>
       <p>Here</p>
@@ -19,4 +17,4 @@ const TechnicalTrackCard = ({ title }) => {
   );
 };
 
-export default TechnicalTrackCard;
+export default StartupSchoolCard;
