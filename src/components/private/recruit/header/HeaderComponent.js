@@ -52,6 +52,7 @@ const Title = styled.span`
 `;
 
 const Name = styled.span`
+  color: white;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
@@ -75,9 +76,10 @@ const Name = styled.span`
 // `;
 
 const Avatar2 = styled.div`
+  color: white;
   height: 35px;
   width: 35px;
-  background-color: #ff8c94;
+  /* background-color: #ff8c94; */
   min-width: 35px;
   border-radius: 50px;
   margin-left: 14px;
@@ -207,7 +209,7 @@ function HeaderComponent() {
                 alt="avatar"
                 // className={classes.avatar}
               /> */}
-              <Avatar2>A</Avatar2>
+              <Avatar2>{company.name[0]}</Avatar2>
             </>
           }
           options={[
