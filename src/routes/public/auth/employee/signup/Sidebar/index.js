@@ -6,13 +6,12 @@ import setAuthToken from "../../../../../../utils/setAuthToken";
 
 // React router
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-
+import { SpinLoader } from "../../../../../../components/loaders";
 // Redux imports
 import { useDispatch } from "react-redux";
 import { loadUserAction } from "../../../../../../redux/actions/user";
 
-const Sidebar = () => {
+const Sidebar = ({ signingIn, setSigningIn }) => {
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
@@ -21,7 +20,6 @@ const Sidebar = () => {
     password: "",
     confirmPassword: "",
   });
-  let history = useHistory();
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,6 +28,7 @@ const Sidebar = () => {
   // submit the form
   const onSubmit = async (e) => {
     e.preventDefault();
+    setSigningIn(true);
     if (formData.password !== formData.confirmPassword) {
       console.log("Passwords do not match");
     } else {
@@ -52,13 +51,18 @@ const Sidebar = () => {
         }
         // todo: dispatch action and load to redux
         dispatch(loadUserAction(body));
-        //todo: Go to the home dashboard
-        history.push("/dashboard");
+        setSigningIn(false);
       } catch (err) {
+        setSigningIn(false);
         console.log("this is an error", err);
       }
     }
   };
+
+  let loading;
+  if (signingIn) {
+    loading = <SpinLoader />;
+  }
   return (
     <Container>
       <LogoWrapper>
@@ -113,6 +117,7 @@ const Sidebar = () => {
           <Status />
         </InputContainer>
         <button onClick={(e) => onSubmit(e)}>Sign Up</button>
+        {loading}
       </Form>
       <div>
         <Terms>
