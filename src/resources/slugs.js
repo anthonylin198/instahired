@@ -34,6 +34,7 @@ const slugs = {
   companyDashboard: "/recruit/dashboard",
   openPositions: "/recruit/open-positions",
   assessments: "/recruit/assessments",
+  recruiter: "/recruiter",
 };
 
 export default slugs;

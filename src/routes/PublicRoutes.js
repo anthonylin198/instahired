@@ -14,6 +14,8 @@ const EmployerLogin = lazy(() =>
   import("./public/auth/employer/EmployerLogin")
 );
 
+const RecruiterLanding = lazy(() => import("./public/landing/recruiter"));
+
 function PublicRoutes() {
   return (
     <Suspense fallback={<LoadingComponent loading />}>
@@ -27,6 +29,9 @@ function PublicRoutes() {
         <Route exact path={SLUGS.recruit} component={EmployerLanding} />
         <Route exact path={SLUGS.recruitsignin} component={EmployerLogin} />
         <Route exact path={SLUGS.recruitsignup} component={EmployerSignup} />
+
+        {/* Landing Route */}
+        <Route exact path={SLUGS.recruiter} component={RecruiterLanding} />
 
         <Redirect to={SLUGS.landing} />
       </Switch>
