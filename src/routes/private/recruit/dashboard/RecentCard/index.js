@@ -8,6 +8,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
+import styled from "styled-components";
 
 const columns = [
   { id: "name", label: "Name", minWidth: 170 },
@@ -34,6 +35,11 @@ const columns = [
   //   format: (value) => value.toFixed(2),
   // },
 ];
+
+const Title = styled.h3`
+  padding: 1rem;
+  font-weight: bold;
+`;
 
 function createData(name, job, culture, technical) {
   // const density = population / size;
@@ -63,6 +69,7 @@ const useStyles = makeStyles({
     width: "100%",
   },
   container: {
+    minHeight: "33vh",
     maxHeight: "33vh",
   },
 });
@@ -83,6 +90,7 @@ export default function StickyHeadTable() {
 
   return (
     <Paper className={classes.root}>
+      <Title>Recent Applicants</Title>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
