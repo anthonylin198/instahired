@@ -21,7 +21,7 @@ const index = ({ title, value, img }) => {
 };
 
 const CustomContainer = styled(CardContainer)`
-  height: 9vh;
+  /* height: 9vh; */
 `;
 
 const SummaryContainer = styled.div`

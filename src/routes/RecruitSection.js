@@ -33,6 +33,7 @@ const StyledBlock = styled.div`
 
 const Background = styled.div`
   height: 40vh;
+  /* height: 100%; */
   background: #2980b9; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,

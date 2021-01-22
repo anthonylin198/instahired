@@ -5,6 +5,8 @@ import Grid from "@material-ui/core/Grid";
 
 import SummaryCard from "./SummaryCard.js";
 import SnapshotCard from "./SnapshotCard.js";
+import RecentCard from "./RecentCard/index.js";
+import ApplicantsCard from "./ApplicantsCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,7 +42,15 @@ const Dashboard = () => {
           <SnapshotCard />
         </Grid>
         <Grid item md={4}>
-          <SummaryCard title="Recent Applicants Card" />
+          <ApplicantsCard title="Assessment Pass Rate Pie Chart" />
+        </Grid>
+      </Grid>
+      <Grid container spacing={3}>
+        <Grid item md={8}>
+          <RecentCard />
+        </Grid>
+        <Grid item md={4}>
+          <ApplicantsCard title="Applicant Breakdown Bar Graph" />
         </Grid>
       </Grid>
     </div>

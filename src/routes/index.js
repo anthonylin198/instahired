@@ -30,9 +30,9 @@ function Routes() {
   const [isAuthenticated, setIsAuthenticated] = useState("");
 
   // loads the user data on page refresh
+  // todo: We want to show a loading icon while this is happening
   useEffect(() => {
     //  todo: include logic for different outcomes
-
     const loadUserData = async () => {
       if (localStorage.token) {
         try {
@@ -42,6 +42,7 @@ function Routes() {
         }
       } else if (localStorage.company_token) {
         try {
+          // While thie company actions is happening, we want to be loading our so it won't just appear
           dispatch(loadCompanyAction());
         } catch (err) {
           console.log("error");
