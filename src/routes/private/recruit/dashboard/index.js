@@ -7,6 +7,7 @@ import SummaryCard from "./SummaryCard.js";
 // import SnapshotCard from "./SnapshotCard.js";
 import RecentCard from "./RecentCard/index.js";
 import ApplicantsCard from "./ApplicantsCard";
+// import ProfileCard from "./ProfileCard";
 
 import Activity from "./Activity";
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +22,7 @@ const Dashboard = () => {
     <div className={classes.root}>
       {/* Your Progress */}
       <Grid container spacing={3}>
-        <Grid item md={3}>
+        <Grid item xs={12} md={3}>
           <SummaryCard title="Job Postings" value={3} />
         </Grid>
         <Grid item md={3}>
@@ -39,9 +40,9 @@ const Dashboard = () => {
       </Grid>
       {/* Other Progress */}
       <Grid container spacing={3}>
-        <Grid item md={8}>
+        <Grid item xs={12} md={8}>
           {/* <SnapshotCard /> */}
-
+          {/* <ProfileCard /> */}
           <Activity />
         </Grid>
         <Grid item md={4}>
