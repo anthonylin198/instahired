@@ -8,7 +8,7 @@ import IconCheckboxOff from "../../../../../assets/icons/checkbox-off";
 
 const index = ({ title, value, img }) => {
   return (
-    <CardContainer>
+    <CustomContainer>
       <SummaryContainer>
         <div>
           <h4>{title}</h4>
@@ -16,9 +16,13 @@ const index = ({ title, value, img }) => {
         </div>
         <IconCheckboxOff />
       </SummaryContainer>
-    </CardContainer>
+    </CustomContainer>
   );
 };
+
+const CustomContainer = styled(CardContainer)`
+  height: 10vh;
+`;
 
 const SummaryContainer = styled.div`
   display: flex;

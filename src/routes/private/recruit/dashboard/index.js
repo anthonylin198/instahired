@@ -40,19 +40,7 @@ const Dashboard = () => {
           <SnapshotCard />
         </Grid>
         <Grid item md={4}>
-          <SnapshotCard />
-        </Grid>
-      </Grid>
-      {/* last row */}
-      <Grid container spacing={3}>
-        <Grid item md={4}>
-          <SnapshotCard />
-        </Grid>
-        <Grid item md={4}>
-          <SnapshotCard />
-        </Grid>
-        <Grid item md={4}>
-          <SnapshotCard />
+          <SummaryCard title="Recent Applicants Card" />
         </Grid>
       </Grid>
     </div>

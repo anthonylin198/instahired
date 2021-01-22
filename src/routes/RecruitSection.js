@@ -15,7 +15,7 @@ import { useLocation } from "react-router-dom";
 // components
 const StyledRow = styled(Row)`
   height: 100%;
-  min-height: 850px;
+  min-height: 100vh;
 `;
 
 const StyledColumn = styled(Column)`
