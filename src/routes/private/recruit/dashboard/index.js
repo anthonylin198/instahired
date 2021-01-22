@@ -4,10 +4,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
 import SummaryCard from "./SummaryCard.js";
-import SnapshotCard from "./SnapshotCard.js";
+// import SnapshotCard from "./SnapshotCard.js";
 import RecentCard from "./RecentCard/index.js";
 import ApplicantsCard from "./ApplicantsCard";
 
+import Activity from "./Activity";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -39,7 +40,9 @@ const Dashboard = () => {
       {/* Other Progress */}
       <Grid container spacing={3}>
         <Grid item md={8}>
-          <SnapshotCard />
+          {/* <SnapshotCard /> */}
+
+          <Activity />
         </Grid>
         <Grid item md={4}>
           <ApplicantsCard title="Assessment Pass Rate Pie Chart" />

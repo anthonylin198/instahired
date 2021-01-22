@@ -7,7 +7,7 @@ import styled from "styled-components";
 const index = () => {
   return (
     <CustomContainer>
-      <h2>Current Hiring Pipeline</h2>
+      <h2>Application Overview</h2>
       <TitlesContainer>
         <h3>Role</h3>
         <h3>Open applications</h3>
@@ -33,6 +33,7 @@ const index = () => {
         <p>5</p>
         <p>15</p>
       </RoleContainer>
+      {/* <LinearProgress value={20} variant="indeterminate" /> */}
     </CustomContainer>
   );
 };
