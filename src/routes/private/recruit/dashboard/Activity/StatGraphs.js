@@ -11,7 +11,7 @@ import {
 const StatGraphs = ({ data }) => {
   return (
     //  put height as prop into responsiveContianer of necessary
-    <ResponsiveContainer width="100%">
+    <ResponsiveContainer>
       <LineChart data={data} margin={{ top: 50, right: 0, bottom: 0 }}>
         <XAxis
           dataKey="name"

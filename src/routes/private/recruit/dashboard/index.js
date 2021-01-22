@@ -28,14 +28,10 @@ const Dashboard = () => {
           <QuickStats />
         </Grid>
         <Grid item xs={12} md={5}>
-          <Activity />
+          {/* <Activity /> */}
         </Grid>
       </Grid>
-      <br></br>
-      <br></br>
-      <Grid item xs={12} md={7}>
-        <RecentCard />
-      </Grid>
+
       {/* </Box> */}
     </div>
   );

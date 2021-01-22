@@ -1,23 +1,34 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import Avatar from "@material-ui/core/Avatar";
-import PropTypes from "prop-types";
 import Box from "@material-ui/core/Box";
-// import { Fonts } from "../../../../shared/constants/AppEnums";
 import AppCard from "../../../../../components/crema/AppCard";
 import clsx from "clsx";
 
+import styled from "styled-components";
+
 const useStyles = makeStyles((theme) => ({
   statsCard: {
-    borderRadius: 10,
+    borderRadius: 5,
   },
   root: {
     height: 50,
     width: 50,
-    borderRadius: 10,
+    borderRadius: 5,
     backgroundColor: (props) => props.bgColor,
   },
 }));
+
+const CustomAppCard = styled(AppCard)`
+  && {
+    border-radius: 5;
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+`;
 
 const StatsCard = (props) => {
   const { icon, bgColor, data, heading } = props;
@@ -25,7 +36,7 @@ const StatsCard = (props) => {
   const classes = useStyles({ bgColor });
 
   return (
-    <AppCard className={clsx(classes.statsCard, "card-hover")}>
+    <CustomAppCard>
       <Box display="flex" alignItems="center">
         <Box fontSize={{ xs: 36, md: 48 }} clone>
           <Avatar className={classes.root}>{icon}</Avatar>
@@ -39,21 +50,8 @@ const StatsCard = (props) => {
           </Box>
         </Box>
       </Box>
-    </AppCard>
+    </CustomAppCard>
   );
 };
 
 export default StatsCard;
-
-StatsCard.defaultProps = {
-  bgColor: "",
-  data: {
-    count: "",
-  },
-};
-
-StatsCard.propTypes = {
-  bgColor: PropTypes.string,
-  data: PropTypes.object,
-  heading: PropTypes.any.isRequired,
-};

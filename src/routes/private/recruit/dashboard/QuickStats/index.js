@@ -6,47 +6,45 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
 import ReceiptIcon from "@material-ui/icons/Receipt";
 import Box from "@material-ui/core/Box";
-import PropTypes from "prop-types";
 import { blue, indigo, red, teal } from "@material-ui/core/colors";
-import makeStyles from "@material-ui/core/styles/makeStyles";
 
-const useStyles = makeStyles((theme) => ({
-  textUppercase: {
-    textTransform: "uppercase",
-    marginBottom: 20,
-  },
-}));
+import styled from "styled-components";
 
 // todo: This should be received through the Redux Store
 const quickStatsData = {
-  clientsData: { count: "43,000" },
-  invoiceData: { count: "$10,600" },
-  openProjectsData: { count: "33,280" },
-  totalProjectsData: { count: "73,000" },
+  clientsData: { count: "15" },
+  invoiceData: { count: "37" },
+  openProjectsData: { count: "3" },
+  totalProjectsData: { count: "8" },
 };
 
+// todo: Styled Components
+const CustomBox = styled(Box)`
+  && {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+`;
+
 const QuickStats = () => {
-  const classes = useStyles();
   return (
     <>
-      <Box
+      <CustomBox
         component="h2"
         color="text.primary"
-        className={classes.textUppercase}
         fontSize={16}
         mb={{ xs: 4, sm: 4, xl: 6 }}
-        // fontWeight={Fonts.BOLD}
+        fontWeight={800}
       >
-        <h2>Overview</h2>
-      </Box>
-      <Grid container spacing={2}>
+        Overview Statistics
+      </CustomBox>
+      <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <StatsCard
             icon={<PersonIcon style={{ fontSize: 30 }} />}
             bgColor={red[500]}
             data={quickStatsData.clientsData}
             heading="Open Applications"
-            // heading={<IntlMessages id="dashboard.totalClients" />}
           />
         </Grid>
 
@@ -56,7 +54,6 @@ const QuickStats = () => {
             bgColor={blue[500]}
             data={quickStatsData.invoiceData}
             heading="Closed Applications"
-            // heading={<IntlMessages id="dashboard.paidInvoices" />}
           />
         </Grid>
 
@@ -66,7 +63,6 @@ const QuickStats = () => {
             bgColor={indigo[500]}
             data={quickStatsData.totalProjectsData}
             heading="Open Positions"
-            // heading={<IntlMessages id="dashboard.totalProjects" />}
           />
         </Grid>
 
@@ -76,7 +72,6 @@ const QuickStats = () => {
             bgColor={teal[500]}
             data={quickStatsData.openProjectsData}
             heading="Total Hires"
-            // heading={<IntlMessages id="dashboard.openProjects" />}
           />
         </Grid>
       </Grid>
@@ -85,11 +80,3 @@ const QuickStats = () => {
 };
 
 export default QuickStats;
-
-QuickStats.defaultProps = {
-  quickStatsData: null,
-};
-
-QuickStats.propTypes = {
-  quickStatsData: PropTypes.object,
-};
