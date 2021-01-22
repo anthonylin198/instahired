@@ -1,13 +1,14 @@
 import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+import { Box, Grid } from "@material-ui/core";
 
 import SummaryCard from "./SummaryCard.js";
 // import SnapshotCard from "./SnapshotCard.js";
 import RecentCard from "./RecentCard/index.js";
 import ApplicantsCard from "./ApplicantsCard";
 // import ProfileCard from "./ProfileCard";
+import QuickStats from "./QuickStats";
 
 import Activity from "./Activity";
 const useStyles = makeStyles((theme) => ({
@@ -21,42 +22,21 @@ const Dashboard = () => {
   return (
     <div className={classes.root}>
       {/* Your Progress */}
+      {/* <Box pt={{ xl: 4 }} md={7}> */}
       <Grid container spacing={3}>
-        <Grid item xs={12} md={3}>
-          <SummaryCard title="Job Postings" value={3} />
+        <Grid item xs={12} md={7}>
+          <QuickStats />
         </Grid>
-        <Grid item md={3}>
-          <SummaryCard title="Open Applications" value={10} />
-          {/* <PhaseComponent title={"Technical Track"} /> */}
-        </Grid>
-        <Grid item md={3}>
-          <SummaryCard title="Total Applications" value={60} />
-          {/* <PhaseComponent title={"Production"} /> */}
-        </Grid>
-        <Grid item md={3}>
-          <SummaryCard title="Total Hires" value={6} />
-          {/* <PhaseComponent title={"Production"} /> */}
-        </Grid>
-      </Grid>
-      {/* Other Progress */}
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={8}>
-          {/* <SnapshotCard /> */}
-          {/* <ProfileCard /> */}
+        <Grid item xs={12} md={5}>
           <Activity />
         </Grid>
-        <Grid item md={4}>
-          <ApplicantsCard title="Assessment Pass Rate Pie Chart" />
-        </Grid>
       </Grid>
-      <Grid container spacing={3}>
-        <Grid item md={8}>
-          <RecentCard />
-        </Grid>
-        <Grid item md={4}>
-          <ApplicantsCard title="Applicant Breakdown Bar Graph" />
-        </Grid>
+      <br></br>
+      <br></br>
+      <Grid item xs={12} md={7}>
+        <RecentCard />
       </Grid>
+      {/* </Box> */}
     </div>
   );
 };

@@ -31,5 +31,5 @@ export default HospitalActivity;
 const CustomContainer = styled(CardContainer)`
   background: #172b4d;
   color: white;
-  height: 39vh;
+  /* height: 39vh; */
 `;
