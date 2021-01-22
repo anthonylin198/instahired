@@ -22,17 +22,23 @@ const Dashboard = () => {
   return (
     <div className={classes.root}>
       {/* Your Progress */}
-      {/* <Box pt={{ xl: 4 }} md={7}> */}
       <Grid container spacing={3}>
         <Grid item xs={12} md={7}>
           <QuickStats />
         </Grid>
         <Grid item xs={12} md={5}>
-          {/* <Activity /> */}
+          <ApplicantsCard />
         </Grid>
       </Grid>
 
-      {/* </Box> */}
+      {/* <Grid container spacing={3}>
+        <Grid item xs={12} md={7}>
+          <RecentCard />
+        </Grid>
+        <Grid item xs={12} md={5}>
+          <ApplicantsCard />
+        </Grid>
+      </Grid> */}
     </div>
   );
 };
