@@ -19,18 +19,18 @@ const Dashboard = () => {
       {/* Your Progress */}
       <Grid container spacing={3}>
         <Grid item md={3}>
-          <SummaryCard />
+          <SummaryCard title="Job Postings" value={3} />
         </Grid>
         <Grid item md={3}>
-          <SummaryCard />
+          <SummaryCard title="Open Applications" value={10} />
           {/* <PhaseComponent title={"Technical Track"} /> */}
         </Grid>
         <Grid item md={3}>
-          <SummaryCard />
+          <SummaryCard title="Total Applications" value={60} />
           {/* <PhaseComponent title={"Production"} /> */}
         </Grid>
         <Grid item md={3}>
-          <SummaryCard />
+          <SummaryCard title="Total Hires" value={6} />
           {/* <PhaseComponent title={"Production"} /> */}
         </Grid>
       </Grid>

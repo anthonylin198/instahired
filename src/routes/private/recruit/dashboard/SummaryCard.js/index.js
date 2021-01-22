@@ -1,14 +1,28 @@
 import React from "react";
 
+import styled from "styled-components";
+
 import { CardContainer } from "../../../../../components/layout";
 
-const index = () => {
+import IconCheckboxOff from "../../../../../assets/icons/checkbox-off";
+
+const index = ({ title, value, img }) => {
   return (
     <CardContainer>
-      <h1>here</h1>
-      <h1>herre</h1>
+      <SummaryContainer>
+        <div>
+          <h4>{title}</h4>
+          <h2>{value}</h2>
+        </div>
+        <IconCheckboxOff />
+      </SummaryContainer>
     </CardContainer>
   );
 };
+
+const SummaryContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 export default index;
