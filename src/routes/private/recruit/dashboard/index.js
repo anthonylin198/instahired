@@ -9,7 +9,9 @@ import RecentCard from "./RecentCard/index.js";
 import ApplicantsCard from "./ApplicantsCard";
 // import ProfileCard from "./ProfileCard";
 import QuickStats from "./QuickStats";
+import AddCard from "./AddCard";
 
+import phone from "../../../../assets/img/icon_phone.png";
 import Activity from "./Activity";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,18 +29,15 @@ const Dashboard = () => {
           <QuickStats />
         </Grid>
         <Grid item xs={12} md={5}>
-          <ApplicantsCard />
+          <AddCard />
         </Grid>
-      </Grid>
-
-      {/* <Grid container spacing={3}>
         <Grid item xs={12} md={7}>
-          <RecentCard />
+          <ApplicantsCard />
         </Grid>
         <Grid item xs={12} md={5}>
           <ApplicantsCard />
         </Grid>
-      </Grid> */}
+      </Grid>
     </div>
   );
 };
