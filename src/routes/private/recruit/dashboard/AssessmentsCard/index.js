@@ -16,9 +16,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const earningGraphData = [
-  { color: "#E53E3E", colorName: "#e53935", name: "Fail", value: 35 },
   { color: "#38A169", colorName: "#43a047", name: "Excellent", value: 45 },
   { color: "#4299E1", colorName: "#2196f3", name: "Pass", value: 20 },
+  { color: "#E53E3E", colorName: "#e53935", name: "Fail", value: 35 },
 ];
 
 export const MonthlyEarning = () => {

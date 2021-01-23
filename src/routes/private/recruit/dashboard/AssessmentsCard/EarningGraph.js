@@ -20,8 +20,8 @@ const EarningGraph = ({ earningGraphData }) => {
           dataKey="value"
           cx="50%"
           cy="50%"
-          innerRadius={80}
-          outerRadius={95}
+          innerRadius={140}
+          outerRadius={160}
           fill="#8884d8"
         >
           {earningGraphData.map((entry, index) => (
