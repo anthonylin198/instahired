@@ -2,12 +2,9 @@ import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import { Box, Grid } from "@material-ui/core";
-import ApplicantsCard from "./ApplicantsCard";
-// import ProfileCard from "./ProfileCard";
 import QuickStats from "./QuickStats";
 import AddCard from "./AddCard";
 import AssessmentsCard from "./AssessmentsCard";
-
 import RecentApplicantsCard from "./RecentApplicantsCard";
 
 const useStyles = makeStyles((theme) => ({
