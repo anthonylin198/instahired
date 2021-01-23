@@ -27,8 +27,8 @@ const Dashboard = () => {
         <Grid item xs={12} md={5}>
           <AddCard />
         </Grid>
+        {/* Need to make this more responsive, right now just no show on mobile */}
         <Grid component={Box} item md={7} display={{ xs: "none", md: "block" }}>
-          {/* Need to make this more responsive */}
           <RecentApplicantsCard />
         </Grid>
         <Grid item xs={12} md={5}>
