@@ -52,7 +52,7 @@ const Title = styled.span`
 `;
 
 const Name = styled.span`
-  color: white;
+  color: black;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
@@ -76,7 +76,7 @@ const Name = styled.span`
 // `;
 
 const Avatar2 = styled.div`
-  color: white;
+  color: black;
   height: 35px;
   width: 35px;
   /* background-color: #ff8c94; */

@@ -2,8 +2,8 @@ import React from "react";
 import AppCard from "../../../../../components/crema/AppCard";
 import TransactionTable from "./TransactionTable";
 import AppSelect from "../../../../../components/crema/AppSelect";
-import { useIntl } from "react-intl";
-import styled from "styled-components";
+// import { useIntl } from "react-intl";
+// import styled from "styled-components";
 
 const OrderNTransaction = ({ transactionData }) => {
   const handleSelectionType = (data) => {

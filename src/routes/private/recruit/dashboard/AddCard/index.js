@@ -1,23 +1,23 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid/index";
 import AddCard from "./AddCard";
-import PersonIcon from "@material-ui/icons/Person";
-import DescriptionIcon from "@material-ui/icons/Description";
-import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
-import ReceiptIcon from "@material-ui/icons/Receipt";
+// import PersonIcon from "@material-ui/icons/Person";
+// import DescriptionIcon from "@material-ui/icons/Description";
+// import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
+// import ReceiptIcon from "@material-ui/icons/Receipt";
 import Box from "@material-ui/core/Box";
-import { blue, indigo, red, teal } from "@material-ui/core/colors";
+// import { blue, indigo, red, teal } from "@material-ui/core/colors";
 import phone from "../../../../../assets/img/icon_phone.png";
 
 import styled from "styled-components";
 
 // todo: This should be received through the Redux Store
-const quickStatsData = {
-  clientsData: { count: "15" },
-  invoiceData: { count: "37" },
-  openProjectsData: { count: "3" },
-  totalProjectsData: { count: "8" },
-};
+// const quickStatsData = {
+//   clientsData: { count: "15" },
+//   invoiceData: { count: "37" },
+//   openProjectsData: { count: "3" },
+//   totalProjectsData: { count: "8" },
+// };
 
 // todo: Styled Components
 const CustomBox = styled(Box)`

@@ -3,8 +3,6 @@ import AppCard from "../../../../../components/crema/AppCard";
 import { Box } from "@material-ui/core";
 // import {Fonts} from '../../../../shared/constants/AppEnums';
 
-import styled from "styled-components";
-
 const InfoWidget = ({ data }) => {
   return (
     <AppCard

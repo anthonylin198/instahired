@@ -56,14 +56,14 @@ const transactionData = [
     position: "Backend Engineer",
     date: "08-21-2020",
     score: 60,
-    status: "Open",
+    status: "Closed",
   },
   {
     name: "Bet Bet",
     position: "Backend Engineer",
     date: "08-21-2020",
     score: 45,
-    status: "Open",
+    status: "Closed",
   },
 ];
 

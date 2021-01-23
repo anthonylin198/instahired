@@ -2,10 +2,6 @@ import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import { Box, Grid } from "@material-ui/core";
-
-import SummaryCard from "./SummaryCard.js";
-// import SnapshotCard from "./SnapshotCard.js";
-import RecentCard from "./RecentCard/index.js";
 import ApplicantsCard from "./ApplicantsCard";
 // import ProfileCard from "./ProfileCard";
 import QuickStats from "./QuickStats";
@@ -13,8 +9,6 @@ import AddCard from "./AddCard";
 
 import RecentApplicantsCard from "./RecentApplicantsCard";
 
-import phone from "../../../../assets/img/icon_phone.png";
-import Activity from "./Activity";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -33,7 +27,8 @@ const Dashboard = () => {
         <Grid item xs={12} md={5}>
           <AddCard />
         </Grid>
-        <Grid item xs={12} md={7}>
+        <Grid component={Box} item md={7} display={{ xs: "none", md: "block" }}>
+          {/* Need to make this more responsive */}
           <RecentApplicantsCard />
         </Grid>
         <Grid item xs={12} md={5}>
