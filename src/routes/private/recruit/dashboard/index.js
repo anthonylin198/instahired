@@ -11,6 +11,8 @@ import ApplicantsCard from "./ApplicantsCard";
 import QuickStats from "./QuickStats";
 import AddCard from "./AddCard";
 
+import RecentApplicantsCard from "./RecentApplicantsCard";
+
 import phone from "../../../../assets/img/icon_phone.png";
 import Activity from "./Activity";
 const useStyles = makeStyles((theme) => ({
@@ -32,7 +34,7 @@ const Dashboard = () => {
           <AddCard />
         </Grid>
         <Grid item xs={12} md={7}>
-          <ApplicantsCard />
+          <RecentApplicantsCard />
         </Grid>
         <Grid item xs={12} md={5}>
           <ApplicantsCard />
