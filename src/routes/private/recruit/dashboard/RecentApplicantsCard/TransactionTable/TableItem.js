@@ -35,24 +35,31 @@ const TableItem = ({ data }) => {
   }));
   const classes = useStyles();
   const getPaymentTypeColor = () => {
-    switch (data.paymentType) {
-      case "COD": {
-        return "#F84E4E";
-      }
-      case "Prepaid": {
-        return "#43C888";
-      }
-      default: {
-        return "#E2A72E";
-      }
+    if (data.score > 90) {
+      return "#43C888";
+    } else if (data.score > 70) {
+      return "#E2A72E";
+    } else {
+      return "#F84E4E";
     }
+    // switch (data.score) {
+    //   case data.score > 90: {
+    //     return "#F84E4E";
+    //   }
+    //   case data.score < 70: {
+    //     return "#43C888";
+    //   }
+    //   default: {
+    //     return "#E2A72E";
+    //   }
+    // }
   };
   const getPaymentStatusColor = () => {
     switch (data.status) {
-      case "In Transit": {
+      case "Closed": {
         return "#F84E4E";
       }
-      case "Delivered": {
+      case "Open": {
         return "#43C888";
       }
       default: {
@@ -67,13 +74,13 @@ const TableItem = ({ data }) => {
       className={clsx(classes.borderBottomClass, "item-hover")}
     >
       <TableCell component="th" scope="row" className={classes.tableCell}>
-        <Box className={classes.anchar}>{data.id}</Box>
+        <Box>{data.name}</Box>
       </TableCell>
       <TableCell
         align="left"
         className={clsx(classes.tableCell, classes.tableCellColor)}
       >
-        {data.customer}
+        {data.position}
       </TableCell>
       <TableCell align="left" className={classes.tableCell}>
         {data.date}
@@ -83,7 +90,7 @@ const TableItem = ({ data }) => {
         className={classes.tableCell}
         style={{ color: getPaymentTypeColor() }}
       >
-        {data.paymentType}
+        {data.score}
       </TableCell>
       <TableCell align="left" className={classes.tableCell}>
         <Box

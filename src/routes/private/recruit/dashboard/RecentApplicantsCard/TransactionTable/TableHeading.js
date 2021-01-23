@@ -26,18 +26,18 @@ const TableHeading = (props) => {
   const classes = useStyles(props);
   return (
     <TableRow className={classes.tableRowRoot}>
-      <TableCell className={classes.tableCellRoot}>OrderID</TableCell>
+      <TableCell className={classes.tableCellRoot}>Name</TableCell>
       <TableCell align="left" className={classes.tableCellRoot}>
-        Customer
+        Position Applied
       </TableCell>
       <TableCell align="left" className={classes.tableCellRoot}>
-        Order Date
+        Date Applied
       </TableCell>
       <TableCell align="left" className={classes.tableCellRoot}>
-        Payment
+        Assessment Score
       </TableCell>
       <TableCell align="left" className={classes.tableCellRoot}>
-        Status
+        Application Status
       </TableCell>
       <TableCell align="right" className={classes.tableCellRoot}>
         {" "}

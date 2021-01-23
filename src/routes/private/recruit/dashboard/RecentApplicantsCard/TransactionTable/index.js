@@ -17,53 +17,53 @@ const CustomTable = styled(Table)`
 
 const transactionData = [
   {
-    id: "#SK232",
-    customer: "Myrtie",
+    name: "Anthony Lin",
+    position: "Frontend Engineer",
     date: "08-21-2020",
-    paymentType: "COD",
-    status: "In Transit",
+    score: 100,
+    status: "Open",
   },
   {
-    id: "#SK232",
-    customer: "John",
+    name: "John Jones",
+    position: "Business Analyst",
     date: "08-21-2020",
-    paymentType: "COD",
-    status: "Delivered",
+    score: 90,
+    status: "Open",
   },
   {
-    id: "#SK232",
-    customer: "Jill",
+    name: "Jill JIll",
+    position: "Backend Engineer",
     date: "08-21-2020",
-    paymentType: "COD",
-    status: "In Transit",
+    score: 95,
+    status: "Open",
   },
   {
-    id: "#SK232",
-    customer: "Jill",
+    name: "Mary Mary",
+    position: "Frontend Engineer",
     date: "08-21-2020",
-    paymentType: "COD",
-    status: "In Transit",
+    score: 85,
+    status: "Open",
   },
   {
-    id: "#SK232",
-    customer: "Jill",
+    name: "Jane Jane",
+    position: "Frontend Engineer",
     date: "08-21-2020",
-    paymentType: "COD",
-    status: "In Transit",
+    score: 100,
+    status: "Open",
   },
   {
-    id: "#SK232",
-    customer: "Jill",
+    name: "Lit Bet",
+    position: "Backend Engineer",
     date: "08-21-2020",
-    paymentType: "COD",
-    status: "In Transit",
+    score: 60,
+    status: "Open",
   },
   {
-    id: "#SK232",
-    customer: "Jill",
+    name: "Bet Bet",
+    position: "Backend Engineer",
     date: "08-21-2020",
-    paymentType: "COD",
-    status: "In Transit",
+    score: 45,
+    status: "Open",
   },
 ];
 
@@ -75,8 +75,8 @@ const TransactionTable = () => {
           <TableHeading />
         </TableHead>
         <TableBody>
-          {transactionData.map((data) => (
-            <TableItem data={data} key={data.id} />
+          {transactionData.map((data, i) => (
+            <TableItem data={data} key={i} />
           ))}
         </TableBody>
       </CustomTable>
