@@ -6,6 +6,7 @@ import ApplicantsCard from "./ApplicantsCard";
 // import ProfileCard from "./ProfileCard";
 import QuickStats from "./QuickStats";
 import AddCard from "./AddCard";
+import AssessmentsCard from "./AssessmentsCard";
 
 import RecentApplicantsCard from "./RecentApplicantsCard";
 
@@ -31,8 +32,8 @@ const Dashboard = () => {
         <Grid component={Box} item md={7} display={{ xs: "none", md: "block" }}>
           <RecentApplicantsCard />
         </Grid>
-        <Grid item xs={12} md={5}>
-          <ApplicantsCard />
+        <Grid component={Box} item md={5} display={{ xs: "none", md: "block" }}>
+          <AssessmentsCard />
         </Grid>
       </Grid>
     </div>
