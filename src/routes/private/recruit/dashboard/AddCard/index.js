@@ -24,12 +24,13 @@ const CustomBox = styled(Box)`
   && {
     text-transform: uppercase;
     margin-bottom: 20px;
+    height: 5%;
   }
 `;
 
 const CustomGrid = styled(Grid)`
   && {
-    /* height: 97%; */
+    height: 95%;
   }
 `;
 
@@ -46,7 +47,7 @@ const QuickStats = () => {
         Add New
       </CustomBox>
       <CustomGrid container spacing={3}>
-        <CustomGrid item xs={12} sm={6}>
+        <Grid item xs={12} sm={6}>
           <AddCard
             data={{
               id: 1,
@@ -55,8 +56,8 @@ const QuickStats = () => {
               icon: phone,
             }}
           />
-        </CustomGrid>
-        <CustomGrid item xs={12} sm={6}>
+        </Grid>
+        <Grid item xs={12} sm={6}>
           <AddCard
             data={{
               id: 1,
@@ -65,7 +66,7 @@ const QuickStats = () => {
               icon: phone,
             }}
           />
-        </CustomGrid>
+        </Grid>
       </CustomGrid>
     </>
   );
