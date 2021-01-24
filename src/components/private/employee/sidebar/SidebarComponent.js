@@ -3,11 +3,11 @@ import { useHistory } from "react-router-dom";
 import SLUGS from "../../../../resources/slugs";
 import {
   IconLogout,
-  IconSettings,
+  // IconSettings,
   IconAgents,
   IconOverview,
   IconContacts,
-  IconTickets,
+  // IconTickets,
 } from "../../../../assets/icons";
 import { convertSlugToUrl } from "../../../../resources/utilities";
 import LogoComponent from "./LogoComponent";
@@ -56,32 +56,32 @@ function SidebarComponent() {
         onClick={() => onClick(SLUGS.profile)}
       />
       <MenuItem
-        id={SLUGS.dashboard}
-        title="Dashboard"
+        id={SLUGS.jobs}
+        title="Jobs"
         icon={IconOverview}
-        onClick={() => onClick(SLUGS.dashboard)}
+        onClick={() => onClick(SLUGS.jobs)}
       />
       <MenuItem
-        id={SLUGS.explore}
-        title="Explore"
+        id={SLUGS.applications}
+        title="Applications"
         icon={IconContacts}
-        onClick={() => onClick(SLUGS.explore)}
+        onClick={() => onClick(SLUGS.applications)}
       />
       <Seperator></Seperator>
 
-      <MenuItem
+      {/* <MenuItem
         id={SLUGS.messages}
         title="Messages"
         icon={IconTickets}
         onClick={() => onClick(SLUGS.messages)}
-      />
+      /> */}
 
-      <MenuItem
+      {/* <MenuItem
         id={SLUGS.settings}
         title="Settings"
         icon={IconSettings}
         onClick={() => onClick(SLUGS.settings)}
-      />
+      /> */}
 
       <MenuItem
         id="logout"

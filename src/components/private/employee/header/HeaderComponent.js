@@ -140,6 +140,12 @@ function HeaderComponent() {
     case currentItem === SLUGS.messages:
       title = "Messages";
       break;
+    case currentItem === SLUGS.jobs:
+      title = "Explore Jobs";
+      break;
+    case currentItem === SLUGS.applications:
+      title = "Your Applications";
+      break;
     default:
       title = "";
   }
