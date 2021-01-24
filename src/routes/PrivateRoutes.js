@@ -19,7 +19,6 @@ function PrivateRoutes() {
         <Route exact path={SLUGS.explore} component={ExploreComponent} />
         <Route exact path={SLUGS.messages} component={MessagesComponent} />
         <Route exact path={SLUGS.settings} render={() => <div>settings</div>} />
-
         {/* startup school, this needs to be a different section */}
         <Route exact path={SLUGS.startupschool} component={MessagesComponent} />
 
