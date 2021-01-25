@@ -13,30 +13,39 @@ const Title = styled.span`
   letter-spacing: 0.2px;
   /* color: ${(isActive) => (isActive ? "#DDE2FF" : "#A4A6B3")}; */
   color: black;
-  margin-left: 24px;
+  /* margin-left: 24px; */
 `;
 
 const ClassNameColumn = styled(Column)`
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* check if isactive */
-  border-left: ${({ isactive, level }) =>
-    isactive === "true" ? (level > 1 ? "none" : "3px solid #8b8d94") : "none"};
+  /* border-left: ${({ isactive, level }) =>
+    isactive === "true"
+      ? level > 1
+        ? "none"
+        : "3px solid #8b8d94"
+      : "none"}; */
 `;
 
-const ClassNameContainer = styled(Row)`
+const ClassNameContainer = styled.div`
   display: flex;
-  /* flex-direction: column;
+  flex-direction: column;
   justify-content: center;
-  align-items: center; */
-  height: 56px;
+  align-items: center;
+  width: 120px;
+  height: 70px;
+  border-radius: 10px;
   cursor: pointer;
-  padding-left: ${({ level }) => 32 * level + "px"};
+  /* padding-left: ${({ level }) => 32 * level + "px"}; */
   transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: rgba(221, 226, 255, 0.08);
+    background-color: #f2f8ff;
   }
-
   background-color: ${({ isactive }) =>
-    isactive === "true" ? "rgba(221, 226, 255, 0.08)" : "none"};
+    isactive === "true" ? "#f2f8ff" : "none"};
 `;
 
 function MenuItemComponent({
