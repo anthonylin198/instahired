@@ -8,7 +8,7 @@ const Container = styled.div`
 const index = () => {
   return (
     <Container>
-      <p>Filters</p>
+      <p>View Profile Status</p>
     </Container>
   );
 };

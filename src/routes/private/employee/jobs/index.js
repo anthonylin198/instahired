@@ -5,6 +5,7 @@ import { Grid } from "@material-ui/core";
 
 import FilterCard from "./FilterCard";
 import CompanyCard from "./CompanyCard";
+import ProfileCard from "./ProfileCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +32,7 @@ const Dashboard = () => {
         </Grid>
         {/* Need to make this more responsive, right now just no show on mobile */}
         <Grid item xs={12} md={3}>
-          <p>Your Profile Status</p>
+          <ProfileCard />
         </Grid>
       </Grid>
     </div>

@@ -35,6 +35,11 @@ const StyledSidebarBlock = styled.div`
   margin-top: 10px;
 `;
 
+const Spacer = styled.div`
+  margin-top: 85px;
+  /* width: 100vw; */
+`;
+
 function PrivateSection() {
   // conditional rendering based on react router
   let location = useLocation();
@@ -49,12 +54,12 @@ function PrivateSection() {
   return (
     <SidebarContext>
       <HeaderComponent2 />
+      <Spacer />
       <StyledRow>
         {/* Sidebar */}
         <StyledSidebarBlock>
           <SidebarComponent />
         </StyledSidebarBlock>
-
         <StyledColumn flexGrow={1}>
           <StyledBlock>
             <PrivateRoutes />

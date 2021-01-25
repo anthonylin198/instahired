@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 // import { string } from "prop-types";
 import { useHistory } from "react-router-dom";
 import { Row } from "simple-flexbox";
 // import { createUseStyles, useTheme } from "react-jss";
-import { SidebarContext } from "../../../../hooks/useSidebar";
+// import { SidebarContext } from "../../../../hooks/useSidebar";
 import SLUGS from "../../../../resources/slugs";
 import { IconBell, IconSearch } from "../../../../assets/icons";
 import DropdownComponent from "../../../../components/dropdown";
@@ -14,11 +14,14 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 
 const Container = styled(Row)`
-  /* position: fixed; */
-  /* width: 100%; */
+  /* position: absolute; */
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 80px;
   padding: 2rem;
   background-color: #f2f8ff;
+  z-index: 999;
 `;
 
 const IconStyles = styled.div`
@@ -82,7 +85,7 @@ const Avatar2 = styled.div`
 
 function HeaderComponent2() {
   const { push } = useHistory();
-  const { currentItem } = useContext(SidebarContext);
+  // const { currentItem } = useContext(SidebarContext);
 
   let title = "InstaHired";
 
