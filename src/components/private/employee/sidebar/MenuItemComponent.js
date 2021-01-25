@@ -1,5 +1,5 @@
 import React from "react";
-import { any, arrayOf, func, string } from "prop-types";
+// import { any, arrayOf, func, string } from "prop-types";
 import { Column, Row } from "simple-flexbox";
 // import { createUseStyles, useTheme } from "react-jss";
 import CollapsibleContent from "../../../../components/collapsible/CollapsibleContent";
@@ -11,7 +11,8 @@ const Title = styled.span`
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.2px;
-  color: ${(isActive) => (isActive ? "#DDE2FF" : "#A4A6B3")};
+  /* color: ${(isActive) => (isActive ? "#DDE2FF" : "#A4A6B3")}; */
+  color: black;
   margin-left: 24px;
 `;
 
@@ -23,6 +24,9 @@ const ClassNameColumn = styled(Column)`
 
 const ClassNameContainer = styled(Row)`
   display: flex;
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
   height: 56px;
   cursor: pointer;
   padding-left: ${({ level }) => 32 * level + "px"};
@@ -35,33 +39,6 @@ const ClassNameContainer = styled(Row)`
     isactive === "true" ? "rgba(221, 226, 255, 0.08)" : "none"};
 `;
 
-// const useStyles = createUseStyles({
-//   activeContainer: {
-//     backgroundColor: "rgba(221, 226, 255, 0.08)",
-//   },
-//   container: {
-//     display: "flex",
-//     height: 56,
-//     cursor: "pointer",
-//     "&:hover": {
-//       backgroundColor: "rgba(221, 226, 255, 0.08)",
-//     },
-//     paddingLeft: ({ level }) => 32 * level,
-//     transition: "all 0.2s ease-in-out",
-//   },
-//   leftBar: {
-//     borderLeft: ({ theme, level }) =>
-//       level > 1 ? "none" : `3px solid "#8b8d94"`,
-//   },
-//   title: {
-//     fontSize: 16,
-//     lineHeight: "20px",
-//     letterSpacing: "0.2px",
-//     color: ({ theme, isActive }) => (isActive ? "#DDE2FF" : "#A4A6B3"),
-//     marginLeft: 24,
-//   },
-// });
-
 function MenuItemComponent({
   children,
   icon: Icon,
@@ -71,20 +48,15 @@ function MenuItemComponent({
   onClick,
   title,
 }) {
-  // const theme = useTheme();
   const isCollapsible = children && children.length > 0;
   const { isExpanded, isActive, onItemClick } = useSidebar({
     isCollapsible,
     item: id,
     items,
   });
-  // const classes = useStyles({ theme, level, isActive });
-  // const classNameColumn = isActive ? classes.leftBar : "";
-  // const classNameContainer = [
-  //   classes.container,
-  //   isActive && classes.activeContainer,
-  // ].join(" ");
-  const iconColor = isActive ? "#DDE2FF" : "#F7F8FC";
+  // const iconColor = isActive ? "#DDE2FF" : "#F7F8FC";
+
+  const iconColor = "black";
 
   function onItemClicked(e) {
     if (onClick) {
@@ -113,16 +85,5 @@ function MenuItemComponent({
     </ClassNameColumn>
   );
 }
-
-MenuItemComponent.defaultProps = {};
-
-MenuItemComponent.propTypes = {
-  children: any,
-  icon: func,
-  id: string,
-  onClick: func,
-  items: arrayOf(string),
-  title: string,
-};
 
 export default MenuItemComponent;
