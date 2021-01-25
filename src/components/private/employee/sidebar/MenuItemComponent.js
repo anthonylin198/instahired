@@ -1,6 +1,6 @@
 import React from "react";
 // import { any, arrayOf, func, string } from "prop-types";
-import { Column, Row } from "simple-flexbox";
+import { Column } from "simple-flexbox";
 // import { createUseStyles, useTheme } from "react-jss";
 import CollapsibleContent from "../../../../components/collapsible/CollapsibleContent";
 import { useSidebar } from "../../../../hooks/useSidebar";
@@ -8,7 +8,7 @@ import { useSidebar } from "../../../../hooks/useSidebar";
 import styled from "styled-components";
 
 const Title = styled.span`
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.2px;
   /* color: ${(isActive) => (isActive ? "#DDE2FF" : "#A4A6B3")}; */
@@ -17,17 +17,10 @@ const Title = styled.span`
 `;
 
 const ClassNameColumn = styled(Column)`
-  width: 200px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* check if isactive */
-  /* border-left: ${({ isactive, level }) =>
-    isactive === "true"
-      ? level > 1
-        ? "none"
-        : "3px solid #8b8d94"
-      : "none"}; */
 `;
 
 const ClassNameContainer = styled.div`
@@ -35,9 +28,10 @@ const ClassNameContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 120px;
+  width: 100px;
   height: 70px;
   border-radius: 10px;
+  margin: 5px;
   cursor: pointer;
   /* padding-left: ${({ level }) => 32 * level + "px"}; */
   transition: all 0.2s ease-in-out;

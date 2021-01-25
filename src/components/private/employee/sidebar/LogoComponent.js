@@ -7,12 +7,12 @@ import styled from "styled-components";
 
 const LogoContainer = styled(Row)`
   /* margin-left: 32px; */
-  margin-right: 32px;
+  /* margin-right: 32px; */
 `;
 
 const LogoTitle = styled.span`
   margin-left: 10px;
-  color: white;
+  color: black;
   font-weight: "bold";
   font-size: 24px;
   line-height: 30px;
