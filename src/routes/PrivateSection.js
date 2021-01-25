@@ -4,7 +4,8 @@ import {
   SidebarComponent,
   SidebarContext,
 } from "../components/private/employee/sidebar";
-import HeaderComponent from "../components/private/employee/header/HeaderComponent";
+// import HeaderComponent from "../components/private/employee/header/HeaderComponent";
+import HeaderComponent2 from "../components/private/employee/header2";
 import PrivateRoutes from "./PrivateRoutes";
 
 import styled from "styled-components";
@@ -27,10 +28,12 @@ const StyledColumn = styled(Column)`
 `;
 
 const StyledBlock = styled.div`
-  margin-top: 34px;
+  margin-top: 0px;
 `;
 
-// check the route and have conditional rendering
+const StyledSidebarBlock = styled.div`
+  margin-top: 10px;
+`;
 
 function PrivateSection() {
   // conditional rendering based on react router
@@ -45,11 +48,14 @@ function PrivateSection() {
   }
   return (
     <SidebarContext>
+      <HeaderComponent2 />
       <StyledRow>
         {/* Sidebar */}
-        <SidebarComponent />
+        <StyledSidebarBlock>
+          <SidebarComponent />
+        </StyledSidebarBlock>
+
         <StyledColumn flexGrow={1}>
-          <HeaderComponent />
           <StyledBlock>
             <PrivateRoutes />
           </StyledBlock>

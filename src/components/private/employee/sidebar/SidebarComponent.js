@@ -10,7 +10,7 @@ import {
   // IconTickets,
 } from "../../../../assets/icons";
 import { convertSlugToUrl } from "../../../../resources/utilities";
-import LogoComponent from "./LogoComponent";
+// import LogoComponent from "./LogoComponent";
 import Menu from "./MenuComponent";
 import MenuItem from "./MenuItemComponent";
 
@@ -31,7 +31,6 @@ const Seperator = styled.div`
 function SidebarComponent() {
   const { push } = useHistory();
   const isMobile = window.innerWidth <= 1080;
-
   const dispatch = useDispatch();
 
   async function logoutUser() {
@@ -46,9 +45,9 @@ function SidebarComponent() {
 
   return (
     <Menu isMobile={isMobile}>
-      <div style={{ paddingTop: 30, paddingBottom: 30 }}>
+      {/* <div style={{ paddingTop: 30, paddingBottom: 30 }}>
         <LogoComponent />
-      </div>
+      </div> */}
       <MenuItem
         id={SLUGS.profile}
         title="Profile"

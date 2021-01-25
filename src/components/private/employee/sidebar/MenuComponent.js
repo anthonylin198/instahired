@@ -8,7 +8,7 @@ const getMenuStyles = () => ({
     width: 26,
     height: 20,
     left: 30,
-    top: 40,
+    top: 30,
     zIndex: 19,
   },
   bmBurgerBars: {
