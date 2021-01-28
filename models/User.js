@@ -8,7 +8,9 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
   bio: { type: String },
-  courseProgress: { type: Map },
+  applications: [Number],
+  open_applications: { type: Number },
+  closed_applications: { type: Number },
   date: {
     type: Date,
     default: Date.now,

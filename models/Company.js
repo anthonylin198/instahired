@@ -13,6 +13,15 @@ const CompanySchema = new mongoose.Schema({
       name: {
         type: String,
       },
+      job_description: {
+        type: String,
+      },
+      location: {
+        type: String,
+      },
+      open_applications: {
+        type: Number,
+      },
     },
   ],
   assessments: [Number],
