@@ -26,18 +26,17 @@ const useStyles = makeStyles({
   },
 });
 
-export default function OutlinedCard() {
+export default function OutlinedCard({ name, description, jobs }) {
   const classes = useStyles();
-  // const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card className={classes.root} variant="outlined">
       <CardContent>
         <Typography variant="h5" component="h2">
-          Company Name
+          {name}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Company Description
+          {description}
         </Typography>
         <Typography
           className={classes.title}
