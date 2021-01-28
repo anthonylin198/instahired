@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
   const { method } = req;
   switch (method) {
     case "POST":
-      const { name, email, password } = req.body;
+      const { name, email, password, jobs, assessments } = req.body;
       try {
         let user = await Company.findOne({ email });
         if (user) {
@@ -22,6 +22,8 @@ module.exports = async (req, res) => {
           name,
           email,
           password,
+          jobs,
+          assessments,
           isAuthenticated: true,
         });
         // Encrypt password with Bcrypt and save to database

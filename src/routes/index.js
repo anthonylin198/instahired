@@ -43,6 +43,7 @@ function Routes() {
       } else if (localStorage.company_token) {
         try {
           // While thie company actions is happening, we want to be loading our so it won't just appear
+          // load data into redux that will display
           dispatch(loadCompanyAction());
         } catch (err) {
           console.log("error");

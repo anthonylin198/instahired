@@ -1,13 +1,21 @@
 const mongoose = require("mongoose");
 
 const CompanySchema = new mongoose.Schema({
-  name: { type: String },
   email: { type: String, unique: true },
   password: {
     type: String,
     required: true,
   },
-  bio: { type: String },
+  name: { type: String },
+  description: { type: String },
+  jobs: [
+    {
+      name: {
+        type: String,
+      },
+    },
+  ],
+  assessments: [Number],
   date: {
     type: Date,
     default: Date.now,
