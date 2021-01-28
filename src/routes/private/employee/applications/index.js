@@ -1,6 +1,12 @@
 import React from "react";
 
-const index = () => {
+// redux
+import { useSelector } from "react-redux";
+
+const Applications = () => {
+  const user = useSelector((state) => state.user);
+  console.log(user);
+
   return (
     <div>
       <h2>Applications Component</h2>
@@ -8,4 +14,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Applications;
