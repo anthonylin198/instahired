@@ -12,7 +12,15 @@ module.exports = async (req, res) => {
   const { method } = req;
   switch (method) {
     case "POST":
-      const { name, email, password } = req.body;
+      const {
+        name,
+        email,
+        password,
+        bio,
+        applications,
+        open_applications,
+        closed_applications,
+      } = req.body;
       try {
         let user = await User.findOne({ email });
         if (user) {
@@ -20,6 +28,10 @@ module.exports = async (req, res) => {
         }
         user = new User({
           name,
+          bio,
+          applications,
+          open_applications,
+          closed_applications,
           email,
           password,
           isAuthenticated: true,
