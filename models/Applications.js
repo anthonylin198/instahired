@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const ApplicationsSchema = new mongoose.Schema({
   name: { type: String },
-  questions: [],
+  answers: [],
   applications: [],
 });
 
