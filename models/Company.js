@@ -22,6 +22,9 @@ const CompanySchema = new mongoose.Schema({
       open_applications: {
         type: Number,
       },
+      assessment_id: {
+        type: String,
+      },
     },
   ],
   assessments: [Number],

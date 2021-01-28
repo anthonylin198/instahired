@@ -26,8 +26,21 @@ const useStyles = makeStyles({
   },
 });
 
-export default function OutlinedCard({ name, description, jobs }) {
+export default function OutlinedCard({ name, description, jobs, id }) {
   const classes = useStyles();
+
+  const openJobs = jobs.map((job, i) => {
+    return (
+      <Position
+        position={job.name}
+        description={job.job_description}
+        location={job.location}
+        openApplications={job.open_applications}
+        id={job._id}
+        key={i}
+      />
+    );
+  });
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -46,8 +59,7 @@ export default function OutlinedCard({ name, description, jobs }) {
           12-50 employees
         </Typography>
         {/* Add in cards with the Positions */}
-        <Position />
-        <Position />
+        {openJobs}
       </CardContent>
 
       <CardActions>

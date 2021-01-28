@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import styled from "styled-components";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,17 +22,33 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Variants() {
+const StyledP = styled.p`
+  font-size: 0.5rem;
+`;
+
+export default function Variants({
+  position,
+  description,
+  location,
+  openApplications,
+  id,
+}) {
   const classes = useStyles();
+
+  function logDetails() {
+    console.log("posting id", id);
+  }
 
   return (
     <div className={classes.root}>
       <Paper variant="outlined" className={classes.container}>
-        <p>Frontend Engineer</p>
-        <p>location</p>
-        <p>Date</p>
-        <p>Salary</p>
-        <button className={classes.button}>Apply</button>
+        <StyledP>{position}</StyledP>
+        <StyledP>{description}</StyledP>
+        <StyledP>{location}</StyledP>
+        <StyledP>{openApplications}</StyledP>
+        <button className={classes.button} onClick={() => logDetails()}>
+          Apply
+        </button>
       </Paper>
     </div>
   );

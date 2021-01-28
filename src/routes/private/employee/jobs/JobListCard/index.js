@@ -29,7 +29,8 @@ const JobListCard = () => {
       <CompanyCard
         name={job.name}
         description={job.description}
-        jobs={jobs}
+        jobs={job.jobs}
+        id={job._id}
         key={i}
       />
     );
