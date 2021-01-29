@@ -5,6 +5,7 @@ import { Grid } from "@material-ui/core";
 
 // redux connect
 import { useSelector } from "react-redux";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,9 +26,26 @@ const courses = [
 const Assessments = () => {
   const companyId = useSelector((state) => state.company.id);
 
-  function onClick() {
+  const onClick = async () => {
     console.log("companyId", companyId);
-  }
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const body = JSON.stringify({
+      name: "Frontend Engineer Assessmentsss",
+      questions: [1, 2, 3, 4, 5],
+      applications: [1, 2, 3, 4, 5],
+      company_id: companyId,
+    });
+    // send the request
+    try {
+      await axios.post("/api/assessments", body, config);
+    } catch (err) {
+      console.log("this is an error", err);
+    }
+  };
 
   const classes = useStyles();
   return (

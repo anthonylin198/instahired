@@ -13,12 +13,13 @@ module.exports = async (req, res) => {
   // When assessment is created, we have to have an id attached
   switch (method) {
     case "POST":
-      const { name, questions, applications } = req.body;
+      const { name, questions, applications, company_id } = req.body;
       try {
         let assessment = new Assessment({
           name,
           questions,
           applications,
+          company_id,
         });
         const assessmentData = await Assessment.create(assessment);
         res.status(201).json({ success: true, assessmentData });

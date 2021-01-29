@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const AssessmentSchema = new mongoose.Schema({
-  companyId: { type: String },
+  company_id: { type: String },
   name: { type: String },
   questions: [],
   applications: [],
