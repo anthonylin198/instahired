@@ -21,7 +21,16 @@ export const companySlice = createSlice({
   extraReducers: {
     [loadCompanyAction.fulfilled]: (state, action) => {
       if (action.payload) {
-        const { name, email, description, jobs, assessments } = action.payload;
+        console.log(action.payload);
+        const {
+          name,
+          email,
+          description,
+          jobs,
+          assessments,
+          _id,
+        } = action.payload;
+        state.id = _id;
         state.name = name;
         state.email = email;
         state.description = description;

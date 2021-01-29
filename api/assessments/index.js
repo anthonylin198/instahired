@@ -10,7 +10,7 @@ import Assessment from "../../models/Assessments";
 module.exports = async (req, res) => {
   dbConnect();
   const { method } = req;
-  // if is a company, allow the post
+  // When assessment is created, we have to have an id attached
   switch (method) {
     case "POST":
       const { name, questions, applications } = req.body;
