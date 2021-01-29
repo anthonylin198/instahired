@@ -3,76 +3,30 @@
 // login the user. Check the username with the database, make sure password matches
 import dbConnect from "../../dbutils/dbConnect";
 
-import Assessment from "../../models/Assessment";
+import Assessment from "../../models/Assessments";
 
 // ! user signup, and get specific user based off JWT
 
 module.exports = async (req, res) => {
   dbConnect();
   const { method } = req;
+  // if is a company, allow the post
   switch (method) {
     case "POST":
-      const {
-        name,
-        email,
-        password,
-        bio,
-        applications,
-        open_applications,
-        closed_applications,
-      } = req.body;
+      const { name, questions, applications } = req.body;
       try {
-        let user = await User.findOne({ email });
-        if (user) {
-          res.status(400).json({ errors: [{ msg: "User already exists" }] });
-        }
-        user = new User({
+        let assessment = new Assessment({
           name,
-          bio,
+          questions,
           applications,
-          open_applications,
-          closed_applications,
-          email,
-          password,
-          isAuthenticated: true,
         });
-        // Encrypt password with Bcrypt and save to database
-        const salt = await bcrypt.genSalt(10);
-        user.password = await bcrypt.hash(password, salt);
-        const userData = await User.create(user);
-        // Return the jsonwebtoken
-        const payload = {
-          user: {
-            id: user.id,
-          },
-        };
-        jwt.sign(payload, "secret", { expiresIn: 360000 }, (err, token) => {
-          if (err) throw err;
-          res.status(201).json({ success: true, token });
-        });
+        const assessmentData = await Assessment.create(assessment);
+        res.status(201).json({ success: true, assessmentData });
       } catch (err) {
         res.status(400).json({ success: false, error: err });
       }
       break;
-    case "GET":
-      try {
-        // todo middleware
-        const token = req.headers["x-auth-token"];
-        // check if no token
-        if (!token) {
-          return res
-            .status(401)
-            .json({ msg: "No token, authorization denied" });
-        }
-        // Verify Token
-        const decoded = jwt.verify(token, "secret");
-        req.user = decoded.user;
-        const user = await User.findById(req.user.id).select("-password"); // req.user is set in the auth.js middleware
-        res.status(200).json(user);
-      } catch (error) {
-        res.status(400).json({ success: false, msg: "Token not valid" });
-      }
-      break;
+    // get a specific company
     default:
       res.status(400).json({ success: false });
       break;
