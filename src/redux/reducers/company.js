@@ -21,9 +21,12 @@ export const companySlice = createSlice({
   extraReducers: {
     [loadCompanyAction.fulfilled]: (state, action) => {
       if (action.payload) {
-        const { name, email } = action.payload;
+        const { name, email, description, jobs, assessments } = action.payload;
         state.name = name;
         state.email = email;
+        state.description = description;
+        state.jobs = jobs;
+        state.assessments = assessments;
         state.isAuthenticated = true;
       } else {
         state.name = "";
