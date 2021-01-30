@@ -5,12 +5,9 @@ import dbConnect from "../../dbutils/dbConnect";
 
 import Assessment from "../../models/Assessments";
 
-// ! user signup, and get specific user based off JWT
-
 module.exports = async (req, res) => {
   dbConnect();
   const { method } = req;
-  // When assessment is created, we have to have an id attached
   switch (method) {
     case "POST":
       const { name, questions, applications, company_id } = req.body;

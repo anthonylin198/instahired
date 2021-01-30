@@ -27,7 +27,6 @@ const Assessments = () => {
   const companyId = useSelector((state) => state.company.id);
 
   const onClick = async () => {
-    console.log("companyId", companyId);
     const config = {
       headers: {
         "Content-Type": "application/json",
